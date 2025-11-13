@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Contact Us - Interconnecx</title>
+    <meta name="description" content="Get in touch with Interconnecx. 24/7 support available for dedicated servers, VPS, and colocation services. Located in Detroit, Michigan.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+
+    <!-- Critical Resource Preloading -->
+    <link rel="preload" href="css/output.css?v=1.0.1" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
+
+    <!-- DNS Prefetch & Preconnect -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+
+    <!-- Preload critical scripts -->
+    <link rel="preload" href="js/config-loader.js?v=1.0.1" as="script">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/output.css?v=1.0.1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+
+    <!-- SEO Enhancements -->
+    <script src="js/seo.js?v=1.0.1" defer></script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-['Inter']">
+    <nav class="sticky top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="flex items-center">
+                        <img src="/images/incx_logo.svg" alt="INCX Logo" class="h-10 w-auto" width="120" height="40">
+                    </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-gray-700 dark:text-gray-300">Home</a>
+                    <a href="/dedicated-servers" class="text-gray-700 dark:text-gray-300">Dedicated Servers</a>
+                    <a href="/vps" class="text-gray-700 dark:text-gray-300">VPS</a>
+                    <a href="/colocation" class="text-gray-700 dark:text-gray-300">Colocation</a>
+                    <a href="/network" class="text-gray-700 dark:text-gray-300">Network</a>
+                    <a href="/about" class="text-gray-700 dark:text-gray-300">About</a>
+                    <a href="/contact" class="text-primary-600 dark:text-primary-400 font-semibold">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800" aria-label="Toggle dark mode" title="Toggle dark mode">
+                        <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <a href="/client-portal" class="hidden sm:inline-flex btn btn-primary">Client Area</a>
+                </div>
+            </div>
+        </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section with Background Image -->
+    <section class="relative bg-gradient-to-br from-cyan-900 via-gray-900 to-primary-900 overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <picture>
+                <source srcset="/images/contact.webp" type="image/webp">
+                <img src="/images/contact.jpg" alt="Contact Our Team" class="hero-image w-full h-full object-cover opacity-30" onerror="this.style.display='none'" loading="lazy">
+            </picture>
+            <div class="absolute inset-0 bg-gradient-to-b from-gray-900/80 via-gray-900/70 to-gray-900/80"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 py-24">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="max-w-3xl">
+                    <h1 id="hero-title" class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                        <span class="inline-block h-12 w-80 bg-white/20 animate-pulse rounded"></span>
+                    </h1>
+                    <p id="hero-subtitle" class="text-xl text-gray-200 mb-8">
+                        <span class="inline-block h-6 w-full bg-white/20 animate-pulse rounded mb-2"></span>
+                        <span class="inline-block h-6 w-3/4 bg-white/20 animate-pulse rounded"></span>
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact-form" class="btn btn-primary btn-lg">
+                            <i class="fas fa-envelope mr-2"></i> Send Message
+                        </a>
+                        <a href="tel:+13135050000" class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-gray-900">
+                            <i class="fas fa-phone mr-2"></i> Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact-form" class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-3 gap-12">
+                <!-- Contact Form -->
+                <div class="lg:col-span-2">
+                    <div class="card p-8">
+                        <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Send Us a Message</h2>
+                        <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">First Name *</label>
+                                    <input type="text" required placeholder="John" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all shadow-sm hover:border-gray-400 dark:hover:border-gray-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Last Name *</label>
+                                    <input type="text" required placeholder="Doe" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all shadow-sm hover:border-gray-400 dark:hover:border-gray-500">
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Email Address *</label>
+                                    <input type="email" required placeholder="john@example.com" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all shadow-sm hover:border-gray-400 dark:hover:border-gray-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Phone Number</label>
+                                    <input type="tel" placeholder="(555) 123-4567" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all shadow-sm hover:border-gray-400 dark:hover:border-gray-500">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Department *</label>
+                                <select required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all shadow-sm hover:border-gray-400 dark:hover:border-gray-500 cursor-pointer">
+                                    <option value="" class="text-gray-400">Select Department</option>
+                                    <option value="sales">Sales</option>
+                                    <option value="support">Technical Support</option>
+                                    <option value="billing">Billing</option>
+                                    <option value="abuse">Abuse</option>
+                                    <option value="general">General Inquiry</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Subject *</label>
+                                <input type="text" required placeholder="How can we help you?" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all shadow-sm hover:border-gray-400 dark:hover:border-gray-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Message *</label>
+                                <textarea rows="6" required placeholder="Please provide details about your inquiry..." class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all shadow-sm hover:border-gray-400 dark:hover:border-gray-500 resize-none"></textarea>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="newsletter" class="w-4 h-4 mr-3 text-primary-600 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 rounded focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-800 focus:ring-2 cursor-pointer">
+                                <label for="newsletter" class="text-sm text-gray-700 dark:text-gray-300 cursor-pointer select-none">Subscribe to our newsletter for updates and promotions</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-full py-3 text-lg">
+                                <i class="fas fa-paper-plane mr-2"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <!-- Quick Contact Card -->
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold mb-6 text-gray-900 dark:text-white">Quick Contact</h3>
+                        <div class="space-y-5">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone text-primary-600 dark:text-primary-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900 dark:text-white">Phone</p>
+                                    <p class="text-gray-600 dark:text-gray-400 phone-display">(810) 202-7474</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-envelope text-primary-600 dark:text-primary-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900 dark:text-white">Email</p>
+                                    <p class="text-gray-600 dark:text-gray-400 email-display sales-email">sales@incx.net</p>
+                                    <p class="text-gray-600 dark:text-gray-400 email-display support-email">support@incx.net</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-headset text-primary-600 dark:text-primary-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900 dark:text-white">Support</p>
+                                    <p class="text-gray-600 dark:text-gray-400 support-availability">24/7/365 Available</p>
+                                    <p class="text-green-600 dark:text-green-400 text-sm">Always Online</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Office Location Card -->
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold mb-6 text-gray-900 dark:text-white">Office Location</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-building text-primary-600 dark:text-primary-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900 dark:text-white">Headquarters</p>
+                                    <p class="text-gray-600 dark:text-gray-400 address-display">
+                                        24700 Northwestern Hwy<br>
+                                        Suite 533<br>
+                                        Southfield, MI 48075<br>
+                                        United States
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Center Locations -->
+                    <div class="card p-6">
+                        <h3 class="text-xl font-bold mb-6 text-gray-900 dark:text-white">Data Center Locations</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-server text-primary-600 dark:text-primary-400"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Detroit, Michigan</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-server text-primary-600 dark:text-primary-400"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Kansas City, Missouri</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-server text-primary-600 dark:text-primary-400"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Cleveland, Ohio</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <i class="fas fa-server text-primary-600 dark:text-primary-400"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Dallas, Texas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Contact Options -->
+            <div class="grid md:grid-cols-3 gap-8 mt-12">
+                <div class="card p-6 text-center hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-ticket-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-gray-900 dark:text-white">Support Ticket</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Open a ticket for technical assistance</p>
+                    <a href="/client-portal" class="text-primary-600 dark:text-primary-400 hover:underline">Open Ticket →</a>
+                </div>
+                <div class="card p-6 text-center hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-comments text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-gray-900 dark:text-white">Live Chat</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Chat with our support team instantly</p>
+                    <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">Start Chat →</a>
+                </div>
+                <div class="card p-6 text-center hover:scale-105 transition-transform">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-book text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-gray-900 dark:text-white">Knowledge Base</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4">Find answers in our documentation</p>
+                    <a href="/knowledge-base" class="text-primary-600 dark:text-primary-400 hover:underline">Browse Articles →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Footer content will be loaded by footer.js -->
+    </footer>
+    <script src="js/config-loader.js?v=1.0.1" defer></script>
+    <script src="js/image-handler.js?v=1.0.1" defer></script>
+    <script src="js/main.js?v=1.0.1" defer></script>
+    <script src="js/footer.js?v=1.0.1" defer></script>
+    <script>
+        // Update page content from configuration
+        window.addEventListener('configsLoaded', (event) => {
+            const config = window.configLoader;
+            const pageConfig = config.getCurrentPageConfig();
+            const global = config.global;
+
+            // Update hero content
+            if (pageConfig && pageConfig.hero) {
+                const titleEl = document.getElementById('hero-title');
+                const subtitleEl = document.getElementById('hero-subtitle');
+                const heroImage = document.querySelector('.hero-image');
+
+                if (titleEl && pageConfig.hero.title) {
+                    titleEl.textContent = pageConfig.hero.title;
+                }
+                if (subtitleEl && pageConfig.hero.subtitle) {
+                    subtitleEl.textContent = pageConfig.hero.subtitle;
+                }
+                // Update hero image from config
+                if (heroImage && pageConfig.hero.image) {
+                    heroImage.src = pageConfig.hero.image;
+                    console.log('Updated hero image to:', pageConfig.hero.image);
+                }
+            }
+
+            // Update phone link in hero
+            const phoneLink = document.querySelector('a[href^="tel:"]');
+            if (phoneLink && global.contact && global.contact.phone) {
+                phoneLink.href = `tel:${global.contact.phone}`;
+            }
+
+            // Update support availability
+            if (global.features && global.features.support) {
+                document.querySelectorAll('.support-availability').forEach(el => {
+                    el.textContent = global.features.support.availability + ' Available';
+                });
+            }
+
+            // Update contact information displays
+            if (global.contact) {
+                // Update phone displays
+                document.querySelectorAll('.phone-display').forEach(el => {
+                    el.textContent = global.contact.phoneDisplay || global.contact.phone;
+                });
+
+                // Update email displays
+                document.querySelectorAll('.sales-email').forEach(el => {
+                    el.textContent = global.contact.email;
+                });
+                document.querySelectorAll('.support-email').forEach(el => {
+                    el.textContent = global.contact.supportEmail;
+                });
+
+                // Update address displays
+                if (global.contact.address) {
+                    document.querySelectorAll('.address-display').forEach(el => {
+                        el.innerHTML = `
+                            ${global.contact.address.street}<br>
+                            ${global.contact.address.city}, ${global.contact.address.stateCode} ${global.contact.address.zip}
+                        `;
+                    });
+                }
+            }
+
+            // Update page metadata
+            config.updateMetaTags();
+        });
+    </script>
+</body>
+</html>

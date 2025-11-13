@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "title": "KVM VPS Servers - Interconnecx",
+    "description": "Scalable KVM VPS servers starting at $10/mo. SSD storage, full root access, instant deployment in multiple US data centers.",
+    "keywords": "vps hosting, kvm vps, virtual private server, cloud vps"
+  },
+  "hero": {
+    "title": "KVM VPS Servers",
+    "subtitle": "Scalable virtual private servers with guaranteed resources, SSD storage, and instant deployment. Full root access with custom ISO support.",
+    "image": "/images/vps-hero.jpg"
+  },
+  "features": [
+    "Instant Deploy",
+    "SSD Storage",
+    "Full Root Access",
+    "Custom ISO"
+  ]
+}

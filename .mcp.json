@@ -1,0 +1,88 @@
+{
+  "mcpServers": {
+    "memory": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ],
+      "description": "Provides persistent memory and knowledge graph capabilities for storing and retrieving information across sessions"
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@executeautomation/playwright-mcp-server"
+      ],
+      "description": "Browser automation server for web scraping and interaction using Playwright"
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-brave-search"
+      ],
+      "env": {
+        "BRAVE_API_KEY": "YOUR_BRAVE_API_KEY_HERE"
+      },
+      "description": "Web search capabilities using Brave Search API"
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/home/codingbutter/incx.net"
+      ],
+      "description": "Enhanced filesystem operations with better file management"
+    },
+    "fetch": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-fetch"
+      ],
+      "description": "Fetches and extracts content from URLs"
+    },
+    "puppeteer": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
+      ],
+      "description": "Alternative browser automation using Puppeteer for web scraping and screenshots"
+    },
+    "sqlite": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sqlite",
+        "--db-path",
+        "/home/codingbutter/incx.net/.claude/memory.db"
+      ],
+      "description": "SQLite database for structured data storage and retrieval"
+    },
+    "lighthouse": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "lighthouse-mcp"
+      ],
+      "env": {
+        "CHROME_PATH": "/home/codingbutter/.cache/puppeteer/chrome/linux-131.0.6778.204/chrome-linux64/chrome"
+      },
+      "description": "Simple and reliable Lighthouse auditing for web performance, accessibility, SEO - most popular implementation with 45 stars"
+    },
+    "pagespeed": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "pagespeed-insights-mcp"
+      ],
+      "env": {
+        "GOOGLE_API_KEY": "AIzaSyBpL8LzKQGp7CfHDyJtXPFdc3Yk8plLTmk"
+      },
+      "description": "PageSpeed Insights API integration with caching - alternative to local Lighthouse (requires Google API key)"
+    }
+  }
+}

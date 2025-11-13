@@ -1,0 +1,164 @@
+# Robots.txt for https://incx.net
+# Last updated: 2025-01-12
+
+# Default - Allow all crawlers
+User-agent: *
+Allow: /
+Crawl-delay: 0
+
+# Sitemap location
+Sitemap: https://incx.net/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /
+Allow: /images/
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: BingPreview
+Allow: /
+
+# Other major search engines
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 1
+
+# Social Media Bots
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# SEO Tools
+User-agent: AhrefsBot
+Allow: /
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Allow: /
+Crawl-delay: 10
+
+User-agent: Screaming Frog SEO Spider
+Allow: /
+
+User-agent: MJ12bot
+Allow: /
+Crawl-delay: 10
+
+# Directories to protect
+User-agent: *
+Disallow: /node_modules/
+Disallow: /config/
+Disallow: /.git/
+Disallow: /test-*.html
+Disallow: /debug-*.html
+Disallow: *.json$
+
+# Allow access to CSS and JS
+User-agent: *
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+Allow: /*.ico
+
+# Block bad bots
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Block spam and scraper bots
+User-agent: MegaIndex
+Disallow: /
+
+User-agent: Nutch
+Disallow: /
+
+User-agent: dotbot
+Disallow: /
+
+User-agent: PetalBot
+Crawl-delay: 10
+
+# Security - Block vulnerability scanners
+User-agent: sqlmap
+Disallow: /
+
+User-agent: nikto
+Disallow: /
+
+User-agent: wikto
+Disallow: /
+
+User-agent: scan
+Disallow: /
+
+User-agent: nmap
+Disallow: /
+
+# Performance optimization
+User-agent: *
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+Disallow: /*?*page=
+Disallow: /*&
+Disallow: /*?replytocom
+Disallow: /*/feed/
+Disallow: /*/*/feed/
+
+# Host directive for supporting crawlers
+Host: https://incx.net
+
+# Clean-param directive (for Yandex)
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&ref&source

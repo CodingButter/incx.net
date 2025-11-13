@@ -3,18 +3,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/dedicated-servers', label: 'Dedicated Servers' },
-  { href: '/vps', label: 'VPS' },
-  { href: '/colocation', label: 'Colocation' },
-  { href: '/network', label: 'Network' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
-];
+import { getGlobalConfig } from '@/lib/config';
 
 export default function Navigation() {
+  const config = getGlobalConfig();
+  const navLinks = config.navigation.mainMenu;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -43,8 +36,8 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center" aria-label="Interconnecx Home">
-              <Image src="/images/incx_logo.svg" alt="INCX Logo" width={120} height={40} priority className="h-10 w-auto" />
+            <Link href="/" className="flex items-center" aria-label={`${config.company.name} Home`}>
+              <Image src={config.branding.logo} alt={`${config.company.shortName} Logo`} width={120} height={40} priority className="h-10 w-auto" />
             </Link>
           </div>
 
@@ -79,8 +72,8 @@ export default function Navigation() {
             </button>
 
             {/* Client Area Button */}
-            <Link href="/client-portal" className="hidden sm:inline-flex btn btn-primary">
-              Client Portal
+            <Link href={config.navigation.clientPortalLink} className="hidden sm:inline-flex btn btn-primary">
+              {config.navigation.clientPortalText}
             </Link>
 
             {/* Mobile menu button */}
@@ -110,10 +103,10 @@ export default function Navigation() {
               </Link>
             ))}
             <Link
-              href="/client-portal"
+              href={config.navigation.clientPortalLink}
               className="px-3 py-2 rounded-lg bg-primary-600 text-white hover:bg-primary-700"
             >
-              Client Portal
+              {config.navigation.clientPortalText}
             </Link>
           </div>
         </div>

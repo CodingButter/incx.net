@@ -88,7 +88,21 @@
   "social": {
     "twitter": "https://twitter.com/interconnecx",
     "facebook": "https://facebook.com/interconnecx",
-    "linkedin": "https://linkedin.com/company/interconnecx"
+    "linkedin": "https://linkedin.com/company/interconnecx",
+    "github": "https://github.com/interconnecx"
+  },
+  "navigation": {
+    "mainMenu": [
+      { "label": "Home", "href": "/" },
+      { "label": "Dedicated Servers", "href": "/dedicated-servers" },
+      { "label": "VPS", "href": "/vps" },
+      { "label": "Colocation", "href": "/colocation" },
+      { "label": "Network", "href": "/network" },
+      { "label": "About", "href": "/about" },
+      { "label": "Contact", "href": "/contact" }
+    ],
+    "clientPortalText": "Client Portal",
+    "clientPortalLink": "/client-portal"
   },
   "legal": {
     "termsUrl": "/terms",

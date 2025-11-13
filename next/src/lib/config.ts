@@ -53,10 +53,43 @@ export interface GlobalConfig {
     available: boolean;
     primary?: boolean;
   }>;
+  features: {
+    support: {
+      availability: string;
+      responseTime: string;
+      channels: string[];
+    };
+    billing: {
+      cycles: string[];
+      setupFees: boolean;
+      contractRequired: boolean;
+      paymentMethods: string[];
+    };
+    guarantees: {
+      networkUptime: string;
+      powerUptime: string;
+      hardwareUptime: string;
+    };
+  };
   social: {
     twitter?: string;
     facebook?: string;
     linkedin?: string;
+    github?: string;
+  };
+  navigation: {
+    mainMenu: Array<{
+      label: string;
+      href: string;
+    }>;
+    clientPortalText: string;
+    clientPortalLink: string;
+  };
+  legal: {
+    termsUrl: string;
+    privacyUrl: string;
+    slaUrl: string;
+    aupUrl?: string;
   };
   externalLinks?: {
     knowledgeBase?: string;

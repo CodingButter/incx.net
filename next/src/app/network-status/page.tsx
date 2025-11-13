@@ -1,7 +1,10 @@
 import { Metadata } from 'next';
+import { getGlobalConfig } from '@/lib/config';
+
+const config = getGlobalConfig();
 
 export const metadata: Metadata = {
-  title: 'Network Status - Interconnecx',
+  title: `Network Status - ${config.company.name}`,
   description: 'Check the real-time status of our network and data centers',
   keywords: 'network status, uptime, data center status, service health',
 };
@@ -43,140 +46,51 @@ export default function NetworkStatusPage() {
             Data Center Status
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Detroit */}
-            <div className="card p-6">
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
-                    <i className="fas fa-map-marker-alt text-primary-600 dark:text-primary-400 mr-2" />
-                    Detroit, MI
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Tier 3 Facility</p>
-                </div>
-                <span className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-sm font-semibold">
-                  Operational
-                </span>
-              </div>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600 dark:text-gray-400">Network</span>
-                  <span className="flex items-center gap-2">
-                    <i className="fas fa-circle text-green-500 text-xs" />
-                    <span className="text-sm font-semibold text-gray-900 dark:text-white">Online</span>
+            {config.datacenters.filter(dc => dc.available).map((datacenter) => (
+              <div key={datacenter.id} className="card p-6">
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
+                      <i className="fas fa-map-marker-alt text-primary-600 dark:text-primary-400 mr-2" />
+                      {datacenter.city}, {datacenter.stateCode}
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Tier {datacenter.tier} Facility</p>
+                  </div>
+                  <span className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-sm font-semibold">
+                    Operational
                   </span>
                 </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600 dark:text-gray-400">Power</span>
-                  <span className="flex items-center gap-2">
-                    <i className="fas fa-circle text-green-500 text-xs" />
-                    <span className="text-sm font-semibold text-gray-900 dark:text-white">Online</span>
-                  </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600 dark:text-gray-400">Cooling</span>
-                  <span className="flex items-center gap-2">
-                    <i className="fas fa-circle text-green-500 text-xs" />
-                    <span className="text-sm font-semibold text-gray-900 dark:text-white">Online</span>
-                  </span>
-                </div>
-                <div className="border-t border-gray-200 dark:border-gray-700 pt-3 mt-3">
+                <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600 dark:text-gray-400">Uptime</span>
-                    <span className="text-sm font-bold text-green-600 dark:text-green-400">99.99%</span>
+                    <span className="text-gray-600 dark:text-gray-400">Network</span>
+                    <span className="flex items-center gap-2">
+                      <i className="fas fa-circle text-green-500 text-xs" />
+                      <span className="text-sm font-semibold text-gray-900 dark:text-white">Online</span>
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-600 dark:text-gray-400">Power</span>
+                    <span className="flex items-center gap-2">
+                      <i className="fas fa-circle text-green-500 text-xs" />
+                      <span className="text-sm font-semibold text-gray-900 dark:text-white">Online</span>
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-gray-600 dark:text-gray-400">Cooling</span>
+                    <span className="flex items-center gap-2">
+                      <i className="fas fa-circle text-green-500 text-xs" />
+                      <span className="text-sm font-semibold text-gray-900 dark:text-white">Online</span>
+                    </span>
+                  </div>
+                  <div className="border-t border-gray-200 dark:border-gray-700 pt-3 mt-3">
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-600 dark:text-gray-400">Uptime</span>
+                      <span className="text-sm font-bold text-green-600 dark:text-green-400">{config.features.guarantees.networkUptime}</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* Kansas City */}
-            <div className="card p-6">
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
-                    <i className="fas fa-map-marker-alt text-primary-600 dark:text-primary-400 mr-2" />
-                    Kansas City, MO
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Tier 3 Facility</p>
-                </div>
-                <span className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-sm font-semibold">
-                  Operational
-                </span>
-              </div>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600 dark:text-gray-400">Network</span>
-                  <span className="flex items-center gap-2">
-                    <i className="fas fa-circle text-green-500 text-xs" />
-                    <span className="text-sm font-semibold text-gray-900 dark:text-white">Online</span>
-                  </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600 dark:text-gray-400">Power</span>
-                  <span className="flex items-center gap-2">
-                    <i className="fas fa-circle text-green-500 text-xs" />
-                    <span className="text-sm font-semibold text-gray-900 dark:text-white">Online</span>
-                  </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600 dark:text-gray-400">Cooling</span>
-                  <span className="flex items-center gap-2">
-                    <i className="fas fa-circle text-green-500 text-xs" />
-                    <span className="text-sm font-semibold text-gray-900 dark:text-white">Online</span>
-                  </span>
-                </div>
-                <div className="border-t border-gray-200 dark:border-gray-700 pt-3 mt-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600 dark:text-gray-400">Uptime</span>
-                    <span className="text-sm font-bold text-green-600 dark:text-green-400">99.99%</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Cleveland */}
-            <div className="card p-6">
-              <div className="flex items-start justify-between mb-4">
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
-                    <i className="fas fa-map-marker-alt text-primary-600 dark:text-primary-400 mr-2" />
-                    Cleveland, OH
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Tier 3 Facility</p>
-                </div>
-                <span className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-sm font-semibold">
-                  Operational
-                </span>
-              </div>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600 dark:text-gray-400">Network</span>
-                  <span className="flex items-center gap-2">
-                    <i className="fas fa-circle text-green-500 text-xs" />
-                    <span className="text-sm font-semibold text-gray-900 dark:text-white">Online</span>
-                  </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600 dark:text-gray-400">Power</span>
-                  <span className="flex items-center gap-2">
-                    <i className="fas fa-circle text-green-500 text-xs" />
-                    <span className="text-sm font-semibold text-gray-900 dark:text-white">Online</span>
-                  </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600 dark:text-gray-400">Cooling</span>
-                  <span className="flex items-center gap-2">
-                    <i className="fas fa-circle text-green-500 text-xs" />
-                    <span className="text-sm font-semibold text-gray-900 dark:text-white">Online</span>
-                  </span>
-                </div>
-                <div className="border-t border-gray-200 dark:border-gray-700 pt-3 mt-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600 dark:text-gray-400">Uptime</span>
-                    <span className="text-sm font-bold text-green-600 dark:text-green-400">99.99%</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -283,7 +197,7 @@ export default function NetworkStatusPage() {
           </h2>
           <div className="grid md:grid-cols-4 gap-6">
             <div className="card p-6 text-center">
-              <div className="text-4xl font-bold text-green-600 dark:text-green-400 mb-2">99.99%</div>
+              <div className="text-4xl font-bold text-green-600 dark:text-green-400 mb-2">{config.network.uptime}</div>
               <p className="text-gray-600 dark:text-gray-400">Network Uptime</p>
               <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">Last 30 days</p>
             </div>
@@ -293,7 +207,7 @@ export default function NetworkStatusPage() {
               <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">US East Coast</p>
             </div>
             <div className="card p-6 text-center">
-              <div className="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">100Gbps</div>
+              <div className="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">{config.network.bandwidth}</div>
               <p className="text-gray-600 dark:text-gray-400">Network Capacity</p>
               <p className="text-xs text-gray-500 dark:text-gray-500 mt-2">Per location</p>
             </div>

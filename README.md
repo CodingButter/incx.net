@@ -498,7 +498,7 @@ Our network uptime guarantee is {{network.uptime}}.
 
 ## 📄 Markdown Support for Legal Pages
 
-Legal pages (Terms of Service, Privacy Policy, SLA) support **Markdown** for easier editing!
+Legal pages (Terms of Service, Privacy Policy, SLA, AUP) support **Markdown** for easier editing!
 
 ### Location
 
@@ -506,6 +506,7 @@ Legal content is stored as Markdown files in the `config/` folder:
 - `config/terms-of-service.md`
 - `config/privacy-policy.md`
 - `config/service-level-agreement.md`
+- `config/acceptable-use-policy.md`
 
 ### Markdown Features Supported
 
@@ -901,6 +902,7 @@ incx.net/
 │   ├── terms-of-service.md      # Legal: Terms (Markdown)
 │   ├── privacy-policy.md        # Legal: Privacy (Markdown)
 │   ├── service-level-agreement.md  # Legal: SLA (Markdown)
+│   ├── acceptable-use-policy.md # Legal: AUP (Markdown)
 │   └── pages/                   # Individual page configurations
 │       ├── home.json
 │       ├── vps.json

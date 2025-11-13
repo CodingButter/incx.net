@@ -123,6 +123,7 @@ export default function Footer() {
               <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
               <Link href="/sla" className="hover:text-white transition-colors">SLA</Link>
+              <Link href="/aup" className="hover:text-white transition-colors">AUP</Link>
             </div>
           </div>
           <div className="text-center mt-6 text-sm text-gray-400">

@@ -50,3 +50,10 @@ export function loadTermsOfService(): string {
 export function loadSLA(): string {
   return loadMarkdown('sla.md');
 }
+
+/**
+ * Load acceptable use policy from markdown
+ */
+export function loadAUP(): string {
+  return loadMarkdown('acceptable-use-policy.md');
+}

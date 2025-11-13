@@ -19,6 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.1.0",
     "compression": "^1.8.1",
     "express": "^4.21.2"
   },

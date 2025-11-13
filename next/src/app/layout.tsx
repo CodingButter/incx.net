@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 import { getGlobalConfig } from '@/lib/config';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100`}>
+        <GoogleAnalytics />
         <header>
           <Navigation />
         </header>

@@ -119,5 +119,10 @@
     "secondaryColor": "#10B981",
     "logo": "/images/incx_logo.svg",
     "favicon": "/images/favicon.png"
+  },
+  "analytics": {
+    "enabled": false,
+    "googleAnalyticsId": "",
+    "googleTagManagerId": ""
   }
 }

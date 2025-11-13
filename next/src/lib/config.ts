@@ -101,6 +101,11 @@ export interface GlobalConfig {
     logo: string;
     favicon: string;
   };
+  analytics?: {
+    enabled: boolean;
+    googleAnalyticsId?: string;
+    googleTagManagerId?: string;
+  };
 }
 
 export interface PageConfig {

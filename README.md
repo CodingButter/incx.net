@@ -289,6 +289,68 @@ Each page has its own configuration file where you can customize content.
 }
 ```
 
+### Google Analytics Configuration
+
+Enable Google Analytics tracking by editing the `analytics` section in `config/global.json`:
+
+**Disable Analytics (Default):**
+```json
+{
+  "analytics": {
+    "enabled": false,
+    "googleAnalyticsId": "",
+    "googleTagManagerId": ""
+  }
+}
+```
+
+**Enable Google Analytics 4 (GA4):**
+```json
+{
+  "analytics": {
+    "enabled": true,
+    "googleAnalyticsId": "G-XXXXXXXXXX",
+    "googleTagManagerId": ""
+  }
+}
+```
+
+**Enable Google Tag Manager:**
+```json
+{
+  "analytics": {
+    "enabled": true,
+    "googleAnalyticsId": "",
+    "googleTagManagerId": "GTM-XXXXXXX"
+  }
+}
+```
+
+**Enable Both:**
+```json
+{
+  "analytics": {
+    "enabled": true,
+    "googleAnalyticsId": "G-XXXXXXXXXX",
+    "googleTagManagerId": "GTM-XXXXXXX"
+  }
+}
+```
+
+**How to get your tracking IDs:**
+1. **Google Analytics 4 (GA4):**
+   - Go to [Google Analytics](https://analytics.google.com/)
+   - Create a new property or select existing
+   - Go to Admin → Data Streams → Your website
+   - Copy the Measurement ID (starts with "G-")
+
+2. **Google Tag Manager:**
+   - Go to [Google Tag Manager](https://tagmanager.google.com/)
+   - Create a container or select existing
+   - Copy the Container ID (starts with "GTM-")
+
+**Privacy Note:** Remember to update your Privacy Policy (`config/privacy-policy.md`) when enabling analytics to comply with GDPR, CCPA, and other privacy regulations.
+
 ---
 
 ## 🔧 Template Variables

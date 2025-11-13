@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "title": "Contact Us - Interconnecx",
+    "description": "Get in touch with Interconnecx. {{support.availability}} support available for dedicated servers, VPS, and colocation services. Located in {{contact.address.city}}, {{contact.address.state}}.",
+    "keywords": "contact interconnecx, support, sales, hosting support"
+  },
+  "hero": {
+    "title": "Contact Our Team",
+    "subtitle": "Get in touch with our expert support team. Available {{support.availability}} to help with all your hosting needs.",
+    "image": "/images/contact.jpg"
+  },
+  "departments": [
+    {
+      "name": "Sales",
+      "email": "{{contact.email}}",
+      "phone": "{{contact.phone}}",
+      "hours": "{{contact.hours.sales}}"
+    },
+    {
+      "name": "Support",
+      "email": "{{contact.supportEmail}}",
+      "phone": "{{contact.phone}}",
+      "hours": "{{contact.hours.support}}"
+    }
+  ]
+}

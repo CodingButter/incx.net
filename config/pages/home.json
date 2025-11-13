@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "title": "Interconnecx - Premium Dedicated Servers & Hosting Solutions",
+    "description": "High-performance dedicated servers, VPS, and colocation services with {{network.bandwidth}} unmetered bandwidth. Data centers in Detroit, Kansas City, and Cleveland.",
+    "keywords": "dedicated servers, VPS hosting, colocation, data center, cloud hosting"
+  },
+  "hero": {
+    "headline": "Premium Dedicated Servers & Hosting Solutions",
+    "subheadline": "Enterprise-grade infrastructure with {{network.bandwidth}} unmetered bandwidth and 24/7 support",
+    "description": "High-performance hosting with {{network.bandwidth}} unmetered bandwidth. {{hardware.defaultBrand}} enterprise hardware in SOC audited Tier 3 data centers.",
+    "bullets": [
+      "{{network.bandwidth}} {{network.bandwidthType}} Bandwidth",
+      "{{network.uptime}} Uptime SLA Guarantee",
+      "{{support.availability}} Expert Support",
+      "{{datacenters.count}} US Data Centers"
+    ],
+    "primaryCTA": {
+      "text": "View Servers",
+      "link": "/dedicated-servers",
+      "icon": "fas fa-server"
+    },
+    "secondaryCTA": {
+      "text": "Test Network",
+      "link": "/network",
+      "icon": "fas fa-network-wired"
+    }
+  },
+  "stats": {
+    "enabled": true,
+    "items": [
+      {
+        "value": "15+",
+        "label": "Years in Business",
+        "icon": "fas fa-calendar-alt"
+      },
+      {
+        "value": "{{network.uptime}}",
+        "label": "Network Uptime",
+        "icon": "fas fa-chart-line"
+      },
+      {
+        "value": "{{network.bandwidth}}",
+        "label": "Network Capacity",
+        "icon": "fas fa-network-wired"
+      },
+      {
+        "value": "{{support.availability}}",
+        "label": "Support Available",
+        "icon": "fas fa-headset"
+      }
+    ]
+  },
+  "features": {
+    "headline": "Enterprise Infrastructure You Can Trust",
+    "subheadline": "Built for performance, reliability, and scalability",
+    "items": [
+      {
+        "icon": "fas fa-server",
+        "title": "Enterprise Hardware",
+        "description": "{{hardware.defaultBrand}} PowerEdge servers with Intel Xeon processors and ECC RAM"
+      },
+      {
+        "icon": "fas fa-network-wired",
+        "title": "Premium Network",
+        "description": "{{network.bandwidth}} {{network.bandwidthType}} bandwidth on fully redundant BGP network"
+      },
+      {
+        "icon": "fas fa-shield-alt",
+        "title": "DDoS Protection",
+        "description": "{{network.ddosProtection}} DDoS protection included with all services"
+      },
+      {
+        "icon": "fas fa-clock",
+        "title": "Instant Deployment",
+        "description": "Servers deployed within 2-4 hours, VPS instantly"
+      },
+      {
+        "icon": "fas fa-headset",
+        "title": "Expert Support",
+        "description": "{{support.availability}} support with {{support.responseTime}} response time"
+      },
+      {
+        "icon": "fas fa-map-marker-alt",
+        "title": "Multiple Locations",
+        "description": "{{datacenters.count}} Tier 3 data centers across the United States"
+      }
+    ]
+  }
+}

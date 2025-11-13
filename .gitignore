@@ -30,6 +30,10 @@ Thumbs.db
 *.swo
 *~
 
+# Claude Code and MCP configuration (user-specific)
+.claude/
+.mcp.json
+
 # Temporary files
 *.tmp
 tmp/

@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "title": "Network Infrastructure - Interconnecx",
+    "description": "Premium BGP multihomed network with tier 1 carriers. {{company.asNumber}} with {{network.uptime}} uptime, DDoS protection, and low latency across the USA.",
+    "keywords": "network infrastructure, bgp network, tier 1 carriers, low latency"
+  },
+  "hero": {
+    "title": "Premium Network Infrastructure",
+    "subtitle": "BGP multihomed network with multiple tier 1 providers. {{company.asNumber}} delivering low latency, high bandwidth connectivity across North America.",
+    "image": "/images/networking.jpg"
+  },
+  "stats": {
+    "uptime": "{{network.uptime}}",
+    "capacity": "{{network.bandwidth}}+",
+    "asNumber": "{{company.asNumber}}",
+    "carriers": "{{network.carriers.length}}"
+  },
+  "speedtest": {
+    "title": "Speed Test Files",
+    "description": "Download test files from our data centers to test network speed and latency.",
+    "files": [
+      {
+        "size": "100MB",
+        "label": "100MB Test File",
+        "description": "Quick speed test",
+        "url": "https://speedtest.incx.net/100MB.test"
+      },
+      {
+        "size": "1GB",
+        "label": "1GB Test File",
+        "description": "Standard bandwidth test",
+        "url": "https://speedtest.incx.net/1GB.test"
+      },
+      {
+        "size": "10GB",
+        "label": "10GB Test File",
+        "description": "Extended performance test",
+        "url": "https://speedtest.incx.net/10GB.test"
+      }
+    ],
+    "note": "Files are served from our primary Detroit data center. Download speeds may vary based on your location and network conditions."
+  },
+  "lookingGlass": {
+    "title": "Looking Glass",
+    "description": "Check routing and network paths from our data centers to any destination.",
+    "placeholder": "Enter IP or hostname",
+    "defaultOption": "Select Test Type",
+    "testTypes": [
+      "Ping",
+      "Traceroute",
+      "BGP Route",
+      "MTR"
+    ],
+    "buttonText": "Run Test"
+  },
+  "features": {
+    "headline": "Network Features",
+    "subheadline": "Built for performance, reliability, and security",
+    "items": [
+      {
+        "icon": "fas fa-globe",
+        "title": "BGP Multihoming",
+        "description": "Fully redundant network with automatic failover. Multiple upstream providers ensure your services stay online even if one carrier experiences issues."
+      },
+      {
+        "icon": "fas fa-shield-alt",
+        "title": "DDoS Protection",
+        "description": "Advanced DDoS mitigation included with all services. Real-time threat detection and automatic mitigation keeps your services protected 24/7."
+      },
+      {
+        "icon": "fas fa-tachometer-alt",
+        "title": "Low Latency",
+        "description": "Strategic peering and optimal routing ensures low latency to major US cities. Perfect for gaming, streaming, and real-time applications."
+      },
+      {
+        "icon": "fas fa-infinity",
+        "title": "Unmetered Bandwidth",
+        "description": "True unmetered bandwidth on 1Gbps ports. No surprise overage charges or traffic limits. Use as much bandwidth as you need."
+      },
+      {
+        "icon": "fas fa-server",
+        "title": "IPv4 & IPv6",
+        "description": "Native dual-stack support with both IPv4 and IPv6 connectivity. Multiple IPs available with instant provisioning."
+      },
+      {
+        "icon": "fas fa-chart-line",
+        "title": "99.99% SLA",
+        "description": "Guaranteed network availability backed by SLA. Built with redundancy at every level to ensure maximum uptime."
+      }
+    ]
+  },
+  "datacenters": [
+    {
+      "city": "Detroit",
+      "state": "MI",
+      "type": "Primary Location",
+      "features": [
+        "Tier 3 Facility",
+        "24/7 Security",
+        "N+1 Redundancy",
+        "SOC Audited"
+      ]
+    },
+    {
+      "city": "Kansas City",
+      "state": "MO",
+      "type": "Central US",
+      "features": [
+        "Tier 3 Facility",
+        "Low Latency",
+        "Google Fiber",
+        "Central Location"
+      ]
+    },
+    {
+      "city": "Cleveland",
+      "state": "OH",
+      "type": "East Coast",
+      "features": [
+        "Tier 3 Facility",
+        "Multiple Carriers",
+        "24/7 Support",
+        "Biometric Security"
+      ]
+    }
+  ],
+  "carriers": [
+    {
+      "name": "AT&T",
+      "type": "Tier 1",
+      "speed": "10Gbps"
+    },
+    {
+      "name": "Cogent",
+      "type": "Tier 1",
+      "speed": "10Gbps"
+    },
+    {
+      "name": "Hurricane Electric",
+      "type": "Tier 1",
+      "speed": "10Gbps"
+    },
+    {
+      "name": "Telia",
+      "type": "Tier 1",
+      "speed": "10Gbps"
+    }
+  ]
+}

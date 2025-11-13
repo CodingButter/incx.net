@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "title": "Dedicated Servers - Interconnecx",
+    "description": "High-performance dedicated servers starting at $49/mo. Enterprise {{hardware.defaultBrand}} hardware, {{network.bandwidth}} unmetered bandwidth in multiple US data centers.",
+    "keywords": "dedicated servers, bare metal servers, enterprise hosting, dell servers"
+  },
+  "hero": {
+    "title": "Enterprise Dedicated Servers",
+    "subtitle": "{{hardware.defaultBrand}} enterprise hardware with full root access, {{hardware.management[0]}}/iDRAC, and {{network.bandwidth}} unmetered bandwidth. Deploy in minutes across our US data centers.",
+    "image": "/images/dedicated-servers-hero.jpg"
+  },
+  "features": [
+    "{{hardware.defaultBrand}} Enterprise Hardware",
+    "{{network.bandwidth}} Network",
+    "Full Root Access",
+    "{{hardware.management[0]}}/iDRAC"
+  ]
+}

@@ -1,5 +1,6 @@
 import globalConfig from '@config/global.json';
 import productsConfig from '@config/products.json';
+import testimonialsConfig from '@config/testimonials.json';
 
 // Types
 export interface GlobalConfig {
@@ -340,4 +341,35 @@ export async function loadPageConfig(pageName: string): Promise<PageConfig> {
     console.error(`Failed to load page config for ${pageName}:`, error);
     return {};
   }
+}
+
+// Testimonial interface
+export interface Testimonial {
+  id: string;
+  name: string;
+  company: string;
+  position?: string;
+  rating: number;
+  date: string;
+  service?: string;
+  location?: string;
+  avatar?: string | null;
+  featured: boolean;
+  verified?: boolean;
+  title?: string;
+  content: string;
+  highlights?: string[];
+}
+
+// Load testimonials from config
+export function getTestimonials(): Testimonial[] {
+  const testimonialsData = testimonialsConfig as { testimonials: Testimonial[] };
+  return testimonialsData.testimonials || [];
+}
+
+// Get featured testimonials
+export function getFeaturedTestimonials(limit?: number): Testimonial[] {
+  const testimonials = getTestimonials();
+  const featured = testimonials.filter(t => t.featured);
+  return limit ? featured.slice(0, limit) : featured;
 }

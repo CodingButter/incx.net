@@ -1,23 +1,9 @@
 import Link from 'next/link';
+import { getFeaturedTestimonials } from '@/lib/config';
 
 export default function TestimonialsSection() {
-  const testimonials = [
-    {
-      text: "Interconnecx has been our hosting provider for 5+ years. Their network quality and support are unmatched.",
-      author: "John Smith",
-      company: "Tech Solutions Inc"
-    },
-    {
-      text: "We migrated from AWS to Interconnecx and cut our hosting costs by 60% while improving performance.",
-      author: "Sarah Johnson",
-      company: "Digital Media Group"
-    },
-    {
-      text: "The instant deployment and 24/7 support make Interconnecx the best choice for our infrastructure needs.",
-      author: "Michael Chen",
-      company: "Cloud Services Pro"
-    }
-  ];
+  // Get featured testimonials from config (limit to 3 for homepage)
+  const testimonials = getFeaturedTestimonials(3);
 
   return (
     <section id="testimonials-section" className="py-20 bg-gray-50 dark:bg-gray-900">
@@ -32,20 +18,25 @@ export default function TestimonialsSection() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="card p-6">
+          {testimonials.map((testimonial) => (
+            <div key={testimonial.id} className="card p-6">
               <div className="mb-4">
                 <i className="fas fa-quote-left text-2xl text-primary-600 dark:text-primary-400"></i>
               </div>
+              {testimonial.title && (
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                  {testimonial.title}
+                </h3>
+              )}
               <p className="text-gray-700 dark:text-gray-300 mb-6">
-                {testimonial.text}
+                {testimonial.content}
               </p>
               <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
                 <p className="font-semibold text-gray-900 dark:text-white">
-                  {testimonial.author}
+                  {testimonial.name}
                 </p>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  {testimonial.company}
+                  {testimonial.position && `${testimonial.position}, `}{testimonial.company}
                 </p>
               </div>
             </div>

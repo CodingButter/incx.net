@@ -1,6 +1,12 @@
 import Link from 'next/link';
+import { getGlobalConfig } from '@/lib/config';
 
 export default function CTASection() {
+  const config = getGlobalConfig();
+
+  // Format phone number for tel: link (remove non-digits)
+  const telPhone = config.contact.phone.replace(/[^0-9]/g, '');
+
   return (
     <section className="py-20 bg-gradient-to-r from-primary-600 to-primary-700 dark:from-primary-700 dark:to-primary-800">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -16,10 +22,10 @@ export default function CTASection() {
             View All Plans
           </Link>
           <a
-            href="tel:8102027474"
+            href={`tel:${telPhone}`}
             className="btn border-2 border-white text-white hover:bg-white hover:text-primary-600 px-8 py-4 text-lg"
           >
-            <i className="fas fa-phone mr-2"></i> (810) 202-7474
+            <i className="fas fa-phone mr-2"></i> {config.contact.phoneDisplay}
           </a>
         </div>
       </div>

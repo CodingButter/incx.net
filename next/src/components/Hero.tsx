@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import type { PageConfig } from '@/lib/config';
+import { getHeroBlurDataURL } from '@/lib/image-blur';
 
 interface HeroProps {
   config: PageConfig['hero'];
@@ -38,6 +39,8 @@ export default function Hero({ config, backgroundImage }: HeroProps) {
             quality={60}
             sizes="100vw"
             fetchPriority="high"
+            placeholder="blur"
+            blurDataURL={getHeroBlurDataURL()}
           />
           {/* Single strong dark overlay for text readability */}
           <div className="absolute inset-0 bg-black opacity-75" />

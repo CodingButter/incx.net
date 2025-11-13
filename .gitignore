@@ -48,6 +48,8 @@ temp/
 
 # Image originals (already backed up)
 html/images/originals/
+next/public/images/originals/
+**/images/originals/
 
 # Package lock (optional - uncomment if using yarn)
 # package-lock.json

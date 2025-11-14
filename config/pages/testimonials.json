@@ -7,7 +7,7 @@
   "hero": {
     "title": "Customer Testimonials",
     "subtitle": "Hear from businesses that trust {{company.name}} for their critical infrastructure. Real stories from real customers.",
-    "image": "/images/testimonials.jpg"
+    "image": "/images/testimonials-hero.webp"
   },
   "stats": {
     "enabled": true,

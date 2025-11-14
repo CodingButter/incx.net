@@ -7,7 +7,7 @@
   "hero": {
     "title": "Enterprise Dedicated Servers",
     "subtitle": "{{hardware.defaultBrand}} enterprise hardware with full root access, {{hardware.management[0]}}/iDRAC, and {{network.bandwidth}} unmetered bandwidth. Deploy in minutes across our US data centers.",
-    "image": "/images/dedicated-servers-hero.jpg"
+    "image": "/images/dedicated-servers-hero.webp"
   },
   "features": [
     "{{hardware.defaultBrand}} Enterprise Hardware",

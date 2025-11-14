@@ -7,7 +7,7 @@
   "hero": {
     "title": "KVM VPS Servers",
     "subtitle": "Scalable virtual private servers with guaranteed resources, SSD storage, and instant deployment. Full root access with custom ISO support.",
-    "image": "/images/vps-hero.jpg"
+    "image": "/images/vps-hero.webp"
   },
   "features": [
     "Instant Deploy",

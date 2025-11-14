@@ -56,28 +56,40 @@ Builds to the `www/` folder:
 
 ### Custom Output Directory (WEB_ROOT)
 
-Build to a different folder using the `WEB_ROOT` environment variable:
+**IMPORTANT:** Most web servers use different output directories (like `html/`, `public_html/`, `htdocs/`). Set the `WEB_ROOT` environment variable to build directly to your server's document root.
+
+**Option 1: Set Permanently (RECOMMENDED)**
+
+Add to your shell configuration file so you never have to think about it again:
 
 ```bash
-# One-time custom build
-WEB_ROOT=html ./build.sh
+# Add to ~/.bashrc (or ~/.zshrc for zsh)
+echo 'export WEB_ROOT=html' >> ~/.bashrc
 
-# Or set it for your session
-export WEB_ROOT=html
+# Reload your configuration
+source ~/.bashrc
+
+# Now just run the build script - it will always use the custom directory
 ./build.sh
 ```
 
-**Make it permanent** for your server:
+**Option 2: Set Per Build**
+
+Set it just for one build:
 
 ```bash
-# Add to your shell configuration
-echo 'export WEB_ROOT=html' >> ~/.bashrc
+# One-time build to custom directory
+WEB_ROOT=html ./build.sh
+```
 
-# Reload configuration
-source ~/.bashrc
+**Option 3: Set for Current Session**
 
-# Now all builds use the custom directory
+Set it for your current terminal session:
+
+```bash
+export WEB_ROOT=html
 ./build.sh
+# All builds in this session will use 'html' directory
 ```
 
 ### Common WEB_ROOT Examples
@@ -1028,44 +1040,6 @@ We guarantee {{network.uptime}} network uptime as part of our commitment to qual
 
 ---
 
-## 🧪 Testing Locally (Optional)
-
-Want to preview your website before deploying? You can optionally test it on your local machine.
-
-### Start Local Test Server
-
-From the project root:
-```bash
-cd next && node serve-dist.js
-```
-
-If using a custom `WEB_ROOT`:
-```bash
-cd next && WEB_ROOT=html node serve-dist.js
-```
-
-### View Your Site
-
-Open your browser to: **http://localhost:8080**
-
-### What to Test
-
-- ✅ All pages load correctly
-- ✅ Navigation works
-- ✅ Contact information is accurate
-- ✅ Product prices and features are correct
-- ✅ Links work (internal and external)
-- ✅ Images display properly
-- ✅ Mobile responsive design (resize browser)
-
-### Stop the Test Server
-
-Press `Ctrl+C` in the terminal
-
-**Note:** Local testing is optional. Most users can skip this step and deploy directly after running `./build.sh`.
-
----
-
 ## 🚀 Deployment
 
 Deploy the contents of your build folder to your web server.
@@ -1235,8 +1209,8 @@ cd ..
 **Solution:**
 1. Make sure you edited files in the `config/` folder (not in `next/src/`)
 2. Run `./build.sh` to rebuild completely
-3. Clear browser cache (Ctrl+Shift+R or Cmd+Shift+R)
-4. If testing locally, restart the serve-dist.js server
+3. Re-deploy the `www/` folder (or your WEB_ROOT) to your web server
+4. Clear browser cache (Ctrl+Shift+R or Cmd+Shift+R)
 5. Check browser console (F12) for any JavaScript errors
 6. Verify JSON files are valid using https://jsonlint.com/
 
@@ -1343,24 +1317,6 @@ location / {
 
 ---
 
-### Local Testing Issues
-
-**Problem:** "Port 8080 already in use" (when testing locally)
-
-**Solution:**
-```bash
-# Kill process on port 8080
-# On Linux/Mac:
-lsof -ti:8080 | xargs kill
-
-# Or use a different port
-cd next && PORT=3000 node serve-dist.js
-```
-
-**Note:** This only applies if you're running the optional local test server. Most users can skip local testing entirely.
-
----
-
 ## 📚 Project Structure
 
 Understanding the project layout:
@@ -1396,8 +1352,7 @@ incx.net/
 │   ├── public/                  # Static assets
 │   │   ├── images/             # Logo, photos, icons
 │   │   └── fonts/              # Web fonts
-│   ├── package.json            # Dependencies
-│   └── serve-dist.js           # Local test server
+│   └── package.json            # Dependencies
 │
 └── www/                         # 👈 DEPLOY THIS FOLDER
     └── (Built website files - auto-generated)
@@ -1462,9 +1417,9 @@ incx.net/
 1. **Make changes** to files in `config/` folder
 2. **Validate JSON** using jsonlint.com or your editor
 3. **Run build**: `./build.sh` (from project root)
-4. **Deploy** the `www/` folder to your web server
+4. **Deploy** the `www/` folder (or your WEB_ROOT) to your web server
 
-**Optional:** Test locally before deploying (see Testing Locally section)
+That's it! Simple and straightforward.
 
 ### Configuration Best Practices
 
@@ -1563,12 +1518,6 @@ incx.net/
 2. Run `./build.sh` (or `WEB_ROOT=html ./build.sh` for custom output)
 3. Deploy the `www/` folder (or your custom WEB_ROOT) to your server
 
-**Optional - Test locally first:**
-```bash
-cd next && node serve-dist.js
-# Visit http://localhost:8080
-```
-
 ---
 
 ## 🎓 Tips & Best Practices
@@ -1608,21 +1557,22 @@ cd next && node serve-dist.js
 
 ### Deployment Tips
 
-1. **Always test locally first**
-   - Use `node serve-dist.js` to preview
-   - Check all pages before going live
-
-2. **Keep a backup**
+1. **Keep a backup**
    - Save your current live site before uploading new version
    - Easy to rollback if needed
 
-3. **Deploy during low traffic**
+2. **Deploy during low traffic**
    - Minimize impact on users
    - Usually late evening or early morning
 
-4. **Clear CDN cache if using one**
+3. **Clear CDN cache if using one**
    - Cloudflare, CloudFront, etc.
    - Ensures users see the latest version
+
+4. **Test on production**
+   - After deploying, visit your live site
+   - Check all pages and functionality
+   - Clear browser cache to see latest changes
 
 ---
 
@@ -1707,10 +1657,11 @@ You now have everything you need to manage your website:
 
 1. ✅ Edit JSON files in `config/` folder
 2. ✅ Run `./build.sh` to build
-3. ✅ Test with `node serve-dist.js`
-4. ✅ Deploy `www/` folder to your server
+3. ✅ Deploy `www/` folder (or your WEB_ROOT) to your server
 
 **No coding required. No complex tools. Just edit, build, and deploy!**
+
+**Pro Tip:** Set `WEB_ROOT` in your `~/.bashrc` to build directly to your server's document root every time!
 
 ---
 

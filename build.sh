@@ -182,6 +182,89 @@ check_nodejs() {
     fi
 }
 
+# Configure WEB_ROOT directory
+configure_webroot() {
+    # Only prompt if WEB_ROOT is not set and we're in interactive mode
+    if [ -z "$WEB_ROOT" ] && [ -t 0 ]; then
+        print_header "Build Directory Configuration"
+
+        print_info "The default build directory is 'www'"
+        print_info "You can change this to match your web server's document root"
+        print_info "Common examples: html, public_html, htdocs, /var/www/html"
+        echo ""
+
+        read -p "Would you like to use a custom build directory? (y/n): " -n 1 -r
+        echo ""
+        echo ""
+
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            read -p "Enter the build directory name (e.g., html, public_html): " CUSTOM_DIR
+
+            # Trim whitespace
+            CUSTOM_DIR=$(echo "$CUSTOM_DIR" | xargs)
+
+            if [ -n "$CUSTOM_DIR" ]; then
+                export WEB_ROOT="$CUSTOM_DIR"
+                print_success "Build directory set to: $WEB_ROOT"
+                echo ""
+
+                # Ask if they want to save it permanently
+                read -p "Would you like to save this setting for future builds? (y/n): " -n 1 -r
+                echo ""
+
+                if [[ $REPLY =~ ^[Yy]$ ]]; then
+                    # Detect shell config file
+                    SHELL_CONFIG=""
+                    if [ -n "$BASH_VERSION" ]; then
+                        SHELL_CONFIG="$HOME/.bashrc"
+                    elif [ -n "$ZSH_VERSION" ]; then
+                        SHELL_CONFIG="$HOME/.zshrc"
+                    else
+                        SHELL_CONFIG="$HOME/.bashrc"
+                    fi
+
+                    # Check if WEB_ROOT already exists in config file
+                    if grep -q "^export WEB_ROOT=" "$SHELL_CONFIG" 2>/dev/null; then
+                        # Update existing WEB_ROOT
+                        if [[ "$OSTYPE" == "darwin"* ]]; then
+                            # macOS sed requires backup extension
+                            sed -i '' "s|^export WEB_ROOT=.*|export WEB_ROOT=$WEB_ROOT|" "$SHELL_CONFIG"
+                        else
+                            # Linux sed
+                            sed -i "s|^export WEB_ROOT=.*|export WEB_ROOT=$WEB_ROOT|" "$SHELL_CONFIG"
+                        fi
+                        print_success "Updated WEB_ROOT in $SHELL_CONFIG"
+                    else
+                        # Add new WEB_ROOT
+                        echo "" >> "$SHELL_CONFIG"
+                        echo "# Custom build directory for website builder" >> "$SHELL_CONFIG"
+                        echo "export WEB_ROOT=$WEB_ROOT" >> "$SHELL_CONFIG"
+                        print_success "Added WEB_ROOT to $SHELL_CONFIG"
+                    fi
+
+                    echo ""
+                    print_info "WEB_ROOT=$WEB_ROOT has been saved!"
+                    print_info "It will be used automatically for future builds."
+                    print_info "To change it later, edit: $SHELL_CONFIG"
+                    echo ""
+                else
+                    print_info "Using $WEB_ROOT for this build only."
+                    print_info "To make it permanent, add this to your shell config:"
+                    print_info "  echo 'export WEB_ROOT=$WEB_ROOT' >> ~/.bashrc"
+                    echo ""
+                fi
+            else
+                print_info "Using default directory: www"
+            fi
+        else
+            print_info "Using default directory: www"
+        fi
+        echo ""
+    elif [ -n "$WEB_ROOT" ]; then
+        print_info "Using custom build directory: $WEB_ROOT"
+    fi
+}
+
 # Install npm dependencies
 install_dependencies() {
     print_header "Installing Project Dependencies"
@@ -335,6 +418,9 @@ main() {
 
     # Check and install Node.js if needed
     check_nodejs
+
+    # Configure WEB_ROOT directory
+    configure_webroot
 
     # Install project dependencies
     install_dependencies

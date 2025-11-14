@@ -16,6 +16,9 @@ export default function Hero({ config, backgroundImage }: HeroProps) {
   const title = config.headline || config.title || 'Welcome';
   const subtitle = config.subheadline || config.subtitle || config.description || '';
 
+  // Determine which background image to use (prop takes precedence for backward compatibility)
+  const heroImage = backgroundImage || config.image;
+
   // Determine hero height based on content
   const hasCTAs = config.primaryCTA || config.secondaryCTA;
   const hasFeatures = (config.bullets && config.bullets.length > 0) || (config.features && config.features.length > 0);
@@ -29,10 +32,10 @@ export default function Hero({ config, backgroundImage }: HeroProps) {
   return (
     <section className={`relative ${heightClasses} overflow-hidden bg-gray-900`}>
       {/* Background Image with Overlay */}
-      {backgroundImage && (
+      {heroImage && (
         <div className="absolute inset-0">
           <Image
-            src={backgroundImage}
+            src={heroImage}
             alt="Data Center Infrastructure"
             fill
             className="object-cover"

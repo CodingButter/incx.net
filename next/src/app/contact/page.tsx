@@ -19,7 +19,7 @@ export default async function ContactPage() {
 
   return (
     <>
-      <Hero config={config.hero} backgroundImage="/images/contact-hero.webp" />
+      <Hero config={config.hero} />
 
       {/* Contact Section */}
       <section id="contact-form" className="py-20">

@@ -37,7 +37,7 @@ export default async function TestimonialsPage() {
 
   return (
     <>
-      <Hero config={config.hero} backgroundImage="/images/testimonials-hero.webp" />
+      <Hero config={config.hero} />
 
       {/* Stats Section */}
       {stats && (

@@ -25,7 +25,7 @@ export default async function NetworkPage() {
 
   return (
     <>
-      <Hero config={config.hero} backgroundImage="/images/network-hero.webp" />
+      <Hero config={config.hero} />
 
       {/* Network Stats */}
       {stats && (

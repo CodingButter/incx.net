@@ -8,6 +8,7 @@
     "headline": "Premium Dedicated Servers & Hosting Solutions",
     "subheadline": "Enterprise-grade infrastructure with {{network.bandwidth}} unmetered bandwidth and 24/7 support",
     "description": "High-performance hosting with {{network.bandwidth}} unmetered bandwidth. {{hardware.defaultBrand}} enterprise hardware in SOC audited Tier 3 data centers.",
+    "image": "/images/dedicated-servers-hero.webp",
     "bullets": [
       "{{network.bandwidth}} {{network.bandwidthType}} Bandwidth",
       "{{network.uptime}} Uptime SLA Guarantee",

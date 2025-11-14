@@ -20,7 +20,7 @@ export default async function AboutPage() {
 
   return (
     <>
-      <Hero config={config.hero} backgroundImage="/images/about-hero.webp" />
+      <Hero config={config.hero} />
 
       {/* Company Story */}
       {story && (

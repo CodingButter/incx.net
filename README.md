@@ -139,9 +139,10 @@ All content is managed through JSON files in the `config/` folder. No coding req
 After making any changes to configuration files:
 
 1. **Edit your JSON files** in the `config/` folder
-2. **Run the build script**: `./build.sh`
-3. **Test locally**: `cd next && node serve-dist.js`
-4. **Deploy** the `www/` folder to your web server
+2. **Run the build script**: `./build.sh` (from the project root)
+3. **Deploy** the `www/` folder to your web server
+
+That's it! You never need to go into the `next/` folder - the build script handles everything automatically.
 
 ### Main Configuration: `config/global.json`
 
@@ -1027,21 +1028,20 @@ We guarantee {{network.uptime}} network uptime as part of our commitment to qual
 
 ---
 
-## 🧪 Testing Locally
+## 🧪 Testing Locally (Optional)
 
-After building, test your website on your local machine before deploying.
+Want to preview your website before deploying? You can optionally test it on your local machine.
 
 ### Start Local Test Server
 
+From the project root:
 ```bash
-cd next
-node serve-dist.js
+cd next && node serve-dist.js
 ```
 
 If using a custom `WEB_ROOT`:
 ```bash
-cd next
-WEB_ROOT=html node serve-dist.js
+cd next && WEB_ROOT=html node serve-dist.js
 ```
 
 ### View Your Site
@@ -1061,6 +1061,8 @@ Open your browser to: **http://localhost:8080**
 ### Stop the Test Server
 
 Press `Ctrl+C` in the terminal
+
+**Note:** Local testing is optional. Most users can skip this step and deploy directly after running `./build.sh`.
 
 ---
 
@@ -1207,15 +1209,20 @@ chmod +x build.sh
 **Problem:** "npm install failed"
 
 **Solution:**
+
+First, try running the build script again - it handles most issues automatically:
 ```bash
-# Clear npm cache
+./build.sh
+```
+
+If the problem persists, try clearing the npm cache:
+```bash
 cd next
 rm -rf node_modules package-lock.json
 npm cache clean --force
-npm install
-
-# Then try build again
 cd ..
+
+# Then run build script again
 ./build.sh
 ```
 
@@ -1338,7 +1345,7 @@ location / {
 
 ### Local Testing Issues
 
-**Problem:** "Port 8080 already in use"
+**Problem:** "Port 8080 already in use" (when testing locally)
 
 **Solution:**
 ```bash
@@ -1347,9 +1354,10 @@ location / {
 lsof -ti:8080 | xargs kill
 
 # Or use a different port
-cd next
-PORT=3000 node serve-dist.js
+cd next && PORT=3000 node serve-dist.js
 ```
+
+**Note:** This only applies if you're running the optional local test server. Most users can skip local testing entirely.
 
 ---
 
@@ -1403,13 +1411,24 @@ incx.net/
 - This is where you make all changes
 
 **`next/`** - The application code
-- Leave this folder alone unless you're a developer
-- Contains the build tools and components
+- **DO NOT EDIT** - Leave this folder alone
+- Only for advanced developers
+- The build script manages everything in here automatically
+- You never need to cd into this folder
 
 **`www/`** (or your custom `WEB_ROOT`)
 - Auto-generated when you run `./build.sh`
 - Contains your ready-to-deploy website
 - Upload this folder to your web server
+
+### Simple Workflow
+
+1. Edit files in `config/` folder only
+2. Run `./build.sh` from project root
+3. Deploy `www/` folder
+4. Done!
+
+**You never need to touch the `next/` folder!**
 
 ---
 
@@ -1442,10 +1461,10 @@ incx.net/
 
 1. **Make changes** to files in `config/` folder
 2. **Validate JSON** using jsonlint.com or your editor
-3. **Run build**: `./build.sh`
-4. **Test locally**: `cd next && node serve-dist.js`
-5. **Review changes** in browser at http://localhost:8080
-6. **Deploy** the `www/` folder to your web server
+3. **Run build**: `./build.sh` (from project root)
+4. **Deploy** the `www/` folder to your web server
+
+**Optional:** Test locally before deploying (see Testing Locally section)
 
 ### Configuration Best Practices
 
@@ -1541,14 +1560,14 @@ incx.net/
 ### Preparing for Deployment
 
 1. Make all your configuration changes
-2. Run `./build.sh` (or `WEB_ROOT=html ./build.sh`)
-3. Test locally:
-   ```bash
-   cd next
-   node serve-dist.js
-   # Visit http://localhost:8080
-   ```
-4. If everything looks good, deploy the build folder to your server
+2. Run `./build.sh` (or `WEB_ROOT=html ./build.sh` for custom output)
+3. Deploy the `www/` folder (or your custom WEB_ROOT) to your server
+
+**Optional - Test locally first:**
+```bash
+cd next && node serve-dist.js
+# Visit http://localhost:8080
+```
 
 ---
 

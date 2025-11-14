@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Icon from '@/components/Icon';
 import { getGlobalConfig } from '@/lib/config';
 
 export default function Footer() {
@@ -27,7 +28,7 @@ export default function Footer() {
                   className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-colors"
                   aria-label="Visit our Facebook page"
                 >
-                  <i className="fab fa-facebook-f" aria-hidden="true" />
+                  <Icon icon="fab fa-facebook-f" />
                 </a>
               )}
               {config.social.twitter && (
@@ -38,7 +39,7 @@ export default function Footer() {
                   className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-colors"
                   aria-label="Follow us on Twitter"
                 >
-                  <i className="fab fa-twitter" aria-hidden="true" />
+                  <Icon icon="fab fa-twitter" />
                 </a>
               )}
               {config.social.linkedin && (
@@ -49,7 +50,7 @@ export default function Footer() {
                   className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-colors"
                   aria-label="Connect with us on LinkedIn"
                 >
-                  <i className="fab fa-linkedin-in" aria-hidden="true" />
+                  <Icon icon="fab fa-linkedin-in" />
                 </a>
               )}
               {config.social.github && (
@@ -60,7 +61,7 @@ export default function Footer() {
                   className="w-10 h-10 bg-gray-800 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-colors"
                   aria-label="View our GitHub profile"
                 >
-                  <i className="fab fa-github" aria-hidden="true" />
+                  <Icon icon="fab fa-github" />
                 </a>
               )}
             </div>
@@ -95,19 +96,19 @@ export default function Footer() {
             <h3 className="font-semibold text-white mb-4">Contact</h3>
             <ul className="space-y-2 text-gray-400">
               <li className="flex items-center gap-2">
-                <i className="fas fa-phone text-primary-400" />
+                <Icon icon="fas fa-phone" className="text-primary-400" />
                 <span>{config.contact.phoneDisplay}</span>
               </li>
               <li className="flex items-center gap-2">
-                <i className="fas fa-envelope text-primary-400" />
+                <Icon icon="fas fa-envelope" className="text-primary-400" />
                 <span>{config.contact.email}</span>
               </li>
               <li className="flex items-center gap-2">
-                <i className="fas fa-map-marker-alt text-primary-400" />
+                <Icon icon="fas fa-map-marker-alt" className="text-primary-400" />
                 <span>{config.contact.address.city}, {config.contact.address.stateCode} {config.contact.address.zip}</span>
               </li>
               <li className="flex items-center gap-2">
-                <i className="fas fa-clock text-primary-400" />
+                <Icon icon="fas fa-clock" className="text-primary-400" />
                 <span>{config.features.support.availability} Support</span>
               </li>
             </ul>

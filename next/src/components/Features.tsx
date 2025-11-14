@@ -1,3 +1,4 @@
+import Icon from '@/components/Icon';
 import type { PageConfig } from '@/lib/config';
 
 interface FeaturesProps {
@@ -40,7 +41,7 @@ export default function Features({ config }: FeaturesProps) {
             <div key={index} className="card p-8">
               {feature.icon && (
                 <div className={`w-16 h-16 bg-gradient-to-br ${gradientColors[index % gradientColors.length]} rounded-xl flex items-center justify-center mb-6`}>
-                  <i className={`${feature.icon} text-white text-2xl`} />
+                  <Icon icon={feature.icon} className="text-white text-2xl" />
                 </div>
               )}
               <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">

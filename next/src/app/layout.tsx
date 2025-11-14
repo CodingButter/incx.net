@@ -4,6 +4,7 @@ import './globals.css';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import FontAwesomeLoader from '@/components/FontAwesomeLoader';
 import { getGlobalConfig } from '@/lib/config';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
@@ -27,7 +28,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  if (theme === 'dark' || (!theme && prefersDark)) {
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className={`${inter.className} bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100`}>
+        <FontAwesomeLoader />
         <GoogleAnalytics />
         <header>
           <Navigation />

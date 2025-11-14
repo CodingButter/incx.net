@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Icon from '@/components/Icon';
 import Hero from '@/components/Hero';
 import { loadPageConfig, getGlobalConfig } from '@/lib/config';
 
@@ -18,7 +19,7 @@ export default async function ContactPage() {
 
   return (
     <>
-      <Hero config={config.hero} backgroundImage="/images/contact.jpg" />
+      <Hero config={config.hero} backgroundImage="/images/contact-hero.webp" />
 
       {/* Contact Section */}
       <section id="contact-form" className="py-20">
@@ -111,7 +112,7 @@ export default async function ContactPage() {
                     </label>
                   </div>
                   <button type="submit" className="btn btn-primary w-full py-3 text-lg">
-                    <i className="fas fa-paper-plane mr-2" /> Send Message
+                    <Icon icon="fas fa-paper-plane" className="mr-2" /> Send Message
                   </button>
                 </form>
               </div>
@@ -125,7 +126,7 @@ export default async function ContactPage() {
                 <div className="space-y-5">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <i className="fas fa-phone text-primary-600 dark:text-primary-400" />
+                      <Icon icon="fas fa-phone" className="text-primary-600 dark:text-primary-400" />
                     </div>
                     <div>
                       <p className="font-semibold text-gray-900 dark:text-white">Phone</p>
@@ -134,7 +135,7 @@ export default async function ContactPage() {
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <i className="fas fa-envelope text-primary-600 dark:text-primary-400" />
+                      <Icon icon="fas fa-envelope" className="text-primary-600 dark:text-primary-400" />
                     </div>
                     <div>
                       <p className="font-semibold text-gray-900 dark:text-white">Email</p>
@@ -144,7 +145,7 @@ export default async function ContactPage() {
                   </div>
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <i className="fas fa-headset text-primary-600 dark:text-primary-400" />
+                      <Icon icon="fas fa-headset" className="text-primary-600 dark:text-primary-400" />
                     </div>
                     <div>
                       <p className="font-semibold text-gray-900 dark:text-white">Support</p>
@@ -161,7 +162,7 @@ export default async function ContactPage() {
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <i className="fas fa-building text-primary-600 dark:text-primary-400" />
+                      <Icon icon="fas fa-building" className="text-primary-600 dark:text-primary-400" />
                     </div>
                     <div>
                       <p className="font-semibold text-gray-900 dark:text-white">Headquarters</p>
@@ -182,7 +183,7 @@ export default async function ContactPage() {
                 <div className="space-y-3">
                   {global.datacenters.map((dc, index) => (
                     <div key={index} className="flex items-center gap-3">
-                      <i className="fas fa-server text-primary-600 dark:text-primary-400" />
+                      <Icon icon="fas fa-server" className="text-primary-600 dark:text-primary-400" />
                       <span className="text-gray-700 dark:text-gray-300">{dc.city}, {dc.state}</span>
                     </div>
                   ))}
@@ -195,7 +196,7 @@ export default async function ContactPage() {
           <div className="grid md:grid-cols-3 gap-8 mt-12">
             <div className="card p-6 text-center hover:scale-105 transition-transform">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="fas fa-ticket-alt text-white text-2xl" />
+                <Icon icon="fas fa-ticket-alt" className="text-white text-2xl" />
               </div>
               <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">Support Ticket</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">Open a ticket for technical assistance</p>
@@ -203,7 +204,7 @@ export default async function ContactPage() {
             </div>
             <div className="card p-6 text-center hover:scale-105 transition-transform">
               <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="fas fa-comments text-white text-2xl" />
+                <Icon icon="fas fa-comments" className="text-white text-2xl" />
               </div>
               <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">Live Chat</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">Chat with our support team instantly</p>
@@ -211,7 +212,7 @@ export default async function ContactPage() {
             </div>
             <div className="card p-6 text-center hover:scale-105 transition-transform">
               <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="fas fa-book text-white text-2xl" />
+                <Icon icon="fas fa-book" className="text-white text-2xl" />
               </div>
               <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">Knowledge Base</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">Find answers in our documentation</p>

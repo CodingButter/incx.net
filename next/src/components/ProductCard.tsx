@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Icon from '@/components/Icon';
 import type { Product } from '@/lib/config';
 
 interface ProductCardProps {
@@ -56,7 +57,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       <div className="space-y-2 mb-6">
         {Object.entries(product.specifications).map(([key, value]) => (
           <div key={key} className="flex items-start text-sm">
-            <i className="fas fa-check text-primary-600 dark:text-primary-400 mt-1 mr-2" />
+            <Icon icon="fas fa-check" className="text-primary-600 dark:text-primary-400 mt-1 mr-2" />
             <div>
               <span className="font-semibold capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}:</span>{' '}
               <span className="text-gray-600 dark:text-gray-400">{value}</span>
@@ -69,7 +70,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       <div className="space-y-2 mb-6">
         {product.features.map((feature, index) => (
           <div key={index} className="flex items-start text-sm">
-            <i className="fas fa-check-circle text-primary-600 dark:text-primary-400 mt-1 mr-2" />
+            <Icon icon="fas fa-check-circle" className="text-primary-600 dark:text-primary-400 mt-1 mr-2" />
             <span className="text-gray-600 dark:text-gray-400">{feature}</span>
           </div>
         ))}
@@ -101,7 +102,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i className="fas fa-shopping-cart mr-2" />
+          <Icon icon="fas fa-shopping-cart" className="mr-2" />
           {product.ctaText}
         </Link>
         <div className="text-xs text-gray-500 dark:text-gray-400 text-center mt-2">

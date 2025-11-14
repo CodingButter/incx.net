@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Icon from '@/components/Icon';
 import Hero from '@/components/Hero';
 import { loadPageConfig, getGlobalConfig } from '@/lib/config';
 
@@ -19,7 +20,7 @@ export default async function AboutPage() {
 
   return (
     <>
-      <Hero config={config.hero} backgroundImage="/images/about.jpg" />
+      <Hero config={config.hero} backgroundImage="/images/about-hero.webp" />
 
       {/* Company Story */}
       {story && (
@@ -71,7 +72,7 @@ export default async function AboutPage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i className="fas fa-shield-alt text-white text-3xl" />
+                <Icon icon="fas fa-shield-alt" className="text-white text-3xl" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">Reliability First</h3>
               <p className="text-gray-600 dark:text-gray-400">
@@ -80,7 +81,7 @@ export default async function AboutPage() {
             </div>
             <div className="text-center">
               <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i className="fas fa-users text-white text-3xl" />
+                <Icon icon="fas fa-users" className="text-white text-3xl" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">Customer Focused</h3>
               <p className="text-gray-600 dark:text-gray-400">
@@ -89,7 +90,7 @@ export default async function AboutPage() {
             </div>
             <div className="text-center">
               <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i className="fas fa-rocket text-white text-3xl" />
+                <Icon icon="fas fa-rocket" className="text-white text-3xl" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">Innovation Driven</h3>
               <p className="text-gray-600 dark:text-gray-400">
@@ -112,7 +113,7 @@ export default async function AboutPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="card p-6">
               <div className="text-4xl mb-4 text-primary-600 dark:text-primary-400">
-                <i className="fas fa-server" />
+                <Icon icon="fas fa-server" />
               </div>
               <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Enterprise Hardware</h3>
               <p className="text-gray-600 dark:text-gray-400">
@@ -121,7 +122,7 @@ export default async function AboutPage() {
             </div>
             <div className="card p-6">
               <div className="text-4xl mb-4 text-primary-600 dark:text-primary-400">
-                <i className="fas fa-network-wired" />
+                <Icon icon="fas fa-network-wired" />
               </div>
               <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Premium Network</h3>
               <p className="text-gray-600 dark:text-gray-400">
@@ -130,7 +131,7 @@ export default async function AboutPage() {
             </div>
             <div className="card p-6">
               <div className="text-4xl mb-4 text-primary-600 dark:text-primary-400">
-                <i className="fas fa-shield-alt" />
+                <Icon icon="fas fa-shield-alt" />
               </div>
               <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">DDoS Protection</h3>
               <p className="text-gray-600 dark:text-gray-400">
@@ -139,7 +140,7 @@ export default async function AboutPage() {
             </div>
             <div className="card p-6">
               <div className="text-4xl mb-4 text-primary-600 dark:text-primary-400">
-                <i className="fas fa-building" />
+                <Icon icon="fas fa-building" />
               </div>
               <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Tier 3 Facilities</h3>
               <p className="text-gray-600 dark:text-gray-400">
@@ -161,19 +162,19 @@ export default async function AboutPage() {
           </div>
           <div className="flex flex-wrap justify-center items-center gap-12">
             <div className="text-center">
-              <i className="fas fa-globe text-5xl text-gray-400 dark:text-gray-600" />
+              <Icon icon="fas fa-globe" className="text-5xl text-gray-400 dark:text-gray-600" />
               <p className="mt-2 text-gray-600 dark:text-gray-400 font-semibold">AT&T</p>
             </div>
             <div className="text-center">
-              <i className="fas fa-globe text-5xl text-gray-400 dark:text-gray-600" />
+              <Icon icon="fas fa-globe" className="text-5xl text-gray-400 dark:text-gray-600" />
               <p className="mt-2 text-gray-600 dark:text-gray-400 font-semibold">Cogent</p>
             </div>
             <div className="text-center">
-              <i className="fas fa-globe text-5xl text-gray-400 dark:text-gray-600" />
+              <Icon icon="fas fa-globe" className="text-5xl text-gray-400 dark:text-gray-600" />
               <p className="mt-2 text-gray-600 dark:text-gray-400 font-semibold">Hurricane Electric</p>
             </div>
             <div className="text-center">
-              <i className="fas fa-globe text-5xl text-gray-400 dark:text-gray-600" />
+              <Icon icon="fas fa-globe" className="text-5xl text-gray-400 dark:text-gray-600" />
               <p className="mt-2 text-gray-600 dark:text-gray-400 font-semibold">Telia</p>
             </div>
           </div>
@@ -197,7 +198,7 @@ export default async function AboutPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="flex gap-4">
               <div className="flex-shrink-0">
-                <i className="fas fa-check-circle text-2xl text-green-500" />
+                <Icon icon="fas fa-check-circle" className="text-2xl text-green-500" />
               </div>
               <div>
                 <h3 className="font-bold mb-2 text-gray-900 dark:text-white">No Overselling</h3>
@@ -208,7 +209,7 @@ export default async function AboutPage() {
             </div>
             <div className="flex gap-4">
               <div className="flex-shrink-0">
-                <i className="fas fa-check-circle text-2xl text-green-500" />
+                <Icon icon="fas fa-check-circle" className="text-2xl text-green-500" />
               </div>
               <div>
                 <h3 className="font-bold mb-2 text-gray-900 dark:text-white">True 24/7 Support</h3>
@@ -219,7 +220,7 @@ export default async function AboutPage() {
             </div>
             <div className="flex gap-4">
               <div className="flex-shrink-0">
-                <i className="fas fa-check-circle text-2xl text-green-500" />
+                <Icon icon="fas fa-check-circle" className="text-2xl text-green-500" />
               </div>
               <div>
                 <h3 className="font-bold mb-2 text-gray-900 dark:text-white">Month-to-Month Contracts</h3>
@@ -230,7 +231,7 @@ export default async function AboutPage() {
             </div>
             <div className="flex gap-4">
               <div className="flex-shrink-0">
-                <i className="fas fa-check-circle text-2xl text-green-500" />
+                <Icon icon="fas fa-check-circle" className="text-2xl text-green-500" />
               </div>
               <div>
                 <h3 className="font-bold mb-2 text-gray-900 dark:text-white">Owned Hardware</h3>
@@ -241,7 +242,7 @@ export default async function AboutPage() {
             </div>
             <div className="flex gap-4">
               <div className="flex-shrink-0">
-                <i className="fas fa-check-circle text-2xl text-green-500" />
+                <Icon icon="fas fa-check-circle" className="text-2xl text-green-500" />
               </div>
               <div>
                 <h3 className="font-bold mb-2 text-gray-900 dark:text-white">Flexible Policies</h3>
@@ -252,7 +253,7 @@ export default async function AboutPage() {
             </div>
             <div className="flex gap-4">
               <div className="flex-shrink-0">
-                <i className="fas fa-check-circle text-2xl text-green-500" />
+                <Icon icon="fas fa-check-circle" className="text-2xl text-green-500" />
               </div>
               <div>
                 <h3 className="font-bold mb-2 text-gray-900 dark:text-white">Fast Provisioning</h3>

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import Icon from '@/components/Icon';
 import type { PageConfig } from '@/lib/config';
 import { getHeroBlurDataURL } from '@/lib/image-blur';
 
@@ -70,7 +71,7 @@ export default function Hero({ config, backgroundImage }: HeroProps) {
                   href={config.primaryCTA.link}
                   className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold text-lg px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all"
                 >
-                  {config.primaryCTA.icon && <i className={`${config.primaryCTA.icon} mr-2`} aria-hidden="true" />}
+                  {config.primaryCTA.icon && <Icon icon={config.primaryCTA.icon} className="mr-2" />}
                   {config.primaryCTA.text}
                 </Link>
               )}
@@ -79,7 +80,7 @@ export default function Hero({ config, backgroundImage }: HeroProps) {
                   href={config.secondaryCTA.link}
                   className="inline-block border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold text-lg px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all"
                 >
-                  {config.secondaryCTA.icon && <i className={`${config.secondaryCTA.icon} mr-2`} aria-hidden="true" />}
+                  {config.secondaryCTA.icon && <Icon icon={config.secondaryCTA.icon} className="mr-2" />}
                   {config.secondaryCTA.text}
                 </Link>
               )}

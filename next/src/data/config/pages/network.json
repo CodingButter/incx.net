@@ -7,7 +7,7 @@
   "hero": {
     "title": "Premium Network Infrastructure",
     "subtitle": "BGP multihomed network with multiple tier 1 providers. {{company.asNumber}} delivering low latency, high bandwidth connectivity across North America.",
-    "image": "/images/networking.jpg"
+    "image": "/images/network-hero.webp"
   },
   "stats": {
     "uptime": "{{network.uptime}}",

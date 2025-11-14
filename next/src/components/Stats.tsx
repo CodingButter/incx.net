@@ -1,3 +1,4 @@
+import Icon from '@/components/Icon';
 import type { PageConfig } from '@/lib/config';
 
 interface StatsProps {
@@ -14,7 +15,7 @@ export default function Stats({ config }: StatsProps) {
           {config.items.map((stat, index) => (
             <div key={index} className="text-center">
               {stat.icon && (
-                <i className={`${stat.icon} text-4xl text-primary-600 dark:text-primary-400 mb-4`} />
+                <Icon icon={stat.icon} className="text-4xl text-primary-600 dark:text-primary-400 mb-4" />
               )}
               <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
                 {stat.value}

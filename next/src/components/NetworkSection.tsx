@@ -1,3 +1,4 @@
+import Icon from '@/components/Icon';
 export default function NetworkSection() {
   const datacenters = [
     { city: 'Detroit', stateCode: 'MI', tier: 3 },
@@ -20,7 +21,7 @@ export default function NetworkSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           <div className="text-center">
             <div className="w-20 h-20 bg-primary-100 dark:bg-primary-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <i className="fas fa-globe text-3xl text-primary-600 dark:text-primary-400"></i>
+              <Icon icon="fas fa-globe" className="text-3xl text-primary-600 dark:text-primary-400" />
             </div>
             <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Global Connectivity</h3>
             <p className="text-gray-600 dark:text-gray-400">
@@ -29,7 +30,7 @@ export default function NetworkSection() {
           </div>
           <div className="text-center">
             <div className="w-20 h-20 bg-secondary-100 dark:bg-secondary-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <i className="fas fa-shield-alt text-3xl text-secondary-600 dark:text-secondary-400"></i>
+              <Icon icon="fas fa-shield-alt" className="text-3xl text-secondary-600 dark:text-secondary-400" />
             </div>
             <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">DDoS Protection</h3>
             <p className="text-gray-600 dark:text-gray-400">
@@ -38,7 +39,7 @@ export default function NetworkSection() {
           </div>
           <div className="text-center">
             <div className="w-20 h-20 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <i className="fas fa-chart-line text-3xl text-purple-600 dark:text-purple-400"></i>
+              <Icon icon="fas fa-chart-line" className="text-3xl text-purple-600 dark:text-purple-400" />
             </div>
             <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">100% Uptime SLA</h3>
             <p className="text-gray-600 dark:text-gray-400">
@@ -47,7 +48,7 @@ export default function NetworkSection() {
           </div>
           <div className="text-center">
             <div className="w-20 h-20 bg-orange-100 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <i className="fas fa-tachometer-alt text-3xl text-orange-600 dark:text-orange-400"></i>
+              <Icon icon="fas fa-tachometer-alt" className="text-3xl text-orange-600 dark:text-orange-400" />
             </div>
             <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">Low Latency</h3>
             <p className="text-gray-600 dark:text-gray-400">
@@ -67,7 +68,7 @@ export default function NetworkSection() {
                 key={index}
                 className="bg-white dark:bg-gray-800 rounded-xl p-6 text-center hover:shadow-lg transition-shadow w-full max-w-xs"
               >
-                <i className="fas fa-map-pin text-2xl text-primary-600 dark:text-primary-400 mb-3"></i>
+                <Icon icon="fas fa-map-pin" className="text-2xl text-primary-600 dark:text-primary-400 mb-3" />
                 <h4 className="font-bold text-gray-900 dark:text-white">
                   {location.city}, {location.stateCode}
                 </h4>

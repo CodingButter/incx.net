@@ -1,3 +1,4 @@
+import Icon from '@/components/Icon';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -35,7 +36,7 @@ export default function ClientPortalPage() {
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <i className="fas fa-server text-white"></i>
+                    <Icon icon="fas fa-server" className="text-white" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Manage Services</h3>
@@ -45,7 +46,7 @@ export default function ClientPortalPage() {
 
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <i className="fas fa-file-invoice-dollar text-white"></i>
+                    <Icon icon="fas fa-file-invoice-dollar" className="text-white" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">View Invoices</h3>
@@ -55,7 +56,7 @@ export default function ClientPortalPage() {
 
                 <div className="flex items-start gap-3">
                   <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                    <i className="fas fa-headset text-white"></i>
+                    <Icon icon="fas fa-headset" className="text-white" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Get Support</h3>
@@ -187,7 +188,7 @@ export default function ClientPortalPage() {
               {/* Security Notice */}
               <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
                 <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-                  <i className="fas fa-shield-alt text-green-600"></i>
+                  <Icon icon="fas fa-shield-alt" className="text-green-600" />
                   <span>Secured with SSL encryption</span>
                 </div>
               </div>
@@ -209,7 +210,7 @@ export default function ClientPortalPage() {
               className="bg-white dark:bg-gray-800 rounded-xl p-6 hover:shadow-lg transition-shadow group"
             >
               <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-200 dark:group-hover:bg-primary-800 transition-colors">
-                <i className="fas fa-bullhorn text-primary-600 dark:text-primary-400 text-xl"></i>
+                <Icon icon="fas fa-bullhorn" className="text-primary-600 dark:text-primary-400 text-xl" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                 Announcements
@@ -224,7 +225,7 @@ export default function ClientPortalPage() {
               className="bg-white dark:bg-gray-800 rounded-xl p-6 hover:shadow-lg transition-shadow group"
             >
               <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-200 dark:group-hover:bg-primary-800 transition-colors">
-                <i className="fas fa-book text-primary-600 dark:text-primary-400 text-xl"></i>
+                <Icon icon="fas fa-book" className="text-primary-600 dark:text-primary-400 text-xl" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                 Knowledge Base
@@ -239,7 +240,7 @@ export default function ClientPortalPage() {
               className="bg-white dark:bg-gray-800 rounded-xl p-6 hover:shadow-lg transition-shadow group"
             >
               <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-200 dark:group-hover:bg-primary-800 transition-colors">
-                <i className="fas fa-chart-line text-primary-600 dark:text-primary-400 text-xl"></i>
+                <Icon icon="fas fa-chart-line" className="text-primary-600 dark:text-primary-400 text-xl" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
                 Network Status
@@ -267,14 +268,14 @@ export default function ClientPortalPage() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors"
             >
-              <i className="fas fa-envelope"></i>
+              <Icon icon="fas fa-envelope" />
               Contact Support
             </a>
             <a
               href="tel:+13135050000"
               className="inline-flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white font-semibold py-3 px-8 rounded-lg transition-colors"
             >
-              <i className="fas fa-phone"></i>
+              <Icon icon="fas fa-phone" />
               (313) 505-0000
             </a>
           </div>

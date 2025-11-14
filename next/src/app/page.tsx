@@ -25,7 +25,7 @@ export default async function HomePage() {
     <>
       <Hero
         config={config.hero}
-        backgroundImage="/images/dedicated-servers-hero.jpg"
+        backgroundImage="/images/dedicated-servers-hero.webp"
       />
       <ServicesSection />
       <DedicatedServersSection />

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Icon from '@/components/Icon';
 import { getFeaturedTestimonials } from '@/lib/config';
 
 export default function TestimonialsSection() {
@@ -21,7 +22,7 @@ export default function TestimonialsSection() {
           {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="card p-6">
               <div className="mb-4">
-                <i className="fas fa-quote-left text-2xl text-primary-600 dark:text-primary-400"></i>
+                <Icon icon="fas fa-quote-left" className="text-2xl text-primary-600 dark:text-primary-400" />
               </div>
               {testimonial.title && (
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
@@ -49,7 +50,7 @@ export default function TestimonialsSection() {
             className="btn btn-secondary inline-flex items-center gap-2"
           >
             View All Testimonials
-            <i className="fas fa-arrow-right"></i>
+            <Icon icon="fas fa-arrow-right" />
           </Link>
         </div>
       </div>

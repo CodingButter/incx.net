@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Icon from '@/components/Icon';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import { loadPageConfig, getGlobalConfig } from '@/lib/config';
@@ -24,7 +25,7 @@ export default async function NetworkPage() {
 
   return (
     <>
-      <Hero config={config.hero} backgroundImage="/images/networking.jpg" />
+      <Hero config={config.hero} backgroundImage="/images/network-hero.webp" />
 
       {/* Network Stats */}
       {stats && (
@@ -79,7 +80,7 @@ export default async function NetworkPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {carriers.map((carrier, index) => (
                 <div key={index} className="card p-6 text-center">
-                  <i className="fas fa-globe text-5xl text-primary-600 dark:text-primary-400 mb-4" />
+                  <Icon icon="fas fa-globe" className="text-5xl text-primary-600 dark:text-primary-400 mb-4" />
                   <h3 className="font-bold text-gray-900 dark:text-white">{carrier.name}</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">{carrier.type}</p>
                 </div>
@@ -88,7 +89,7 @@ export default async function NetworkPage() {
 
             <div className="text-center mt-12">
               <div className="inline-flex items-center gap-2 bg-primary-100 dark:bg-primary-900/30 px-6 py-3 rounded-lg">
-                <i className="fas fa-info-circle text-primary-600 dark:text-primary-400" />
+                <Icon icon="fas fa-info-circle" className="text-primary-600 dark:text-primary-400" />
                 <span className="text-gray-900 dark:text-white font-semibold">
                   {global.company.asNumber} - Autonomous System Number
                 </span>
@@ -116,7 +117,7 @@ export default async function NetworkPage() {
               {speedtest && (
                 <div className="card p-8">
                   <h3 className="text-xl font-bold mb-6 text-gray-900 dark:text-white">
-                    <i className="fas fa-download text-primary-600 dark:text-primary-400 mr-2" />
+                    <Icon icon="fas fa-download" className="text-primary-600 dark:text-primary-400 mr-2" />
                     {speedtest.title}
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-6">
@@ -140,7 +141,7 @@ export default async function NetworkPage() {
                               {file.description}
                             </div>
                           </div>
-                          <i className="fas fa-download text-primary-600 dark:text-primary-400" />
+                          <Icon icon="fas fa-download" className="text-primary-600 dark:text-primary-400" />
                         </div>
                       </a>
                     ))}
@@ -157,7 +158,7 @@ export default async function NetworkPage() {
               {lookingGlass && (
                 <div className="card p-8">
                   <h3 className="text-xl font-bold mb-6 text-gray-900 dark:text-white">
-                    <i className="fas fa-search text-primary-600 dark:text-primary-400 mr-2" />
+                    <Icon icon="fas fa-search" className="text-primary-600 dark:text-primary-400 mr-2" />
                     {lookingGlass.title}
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-6">
@@ -214,19 +215,19 @@ export default async function NetworkPage() {
                   </div>
                   <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
                     <li className="flex items-center">
-                      <i className="fas fa-check-circle text-green-600 dark:text-green-400 mr-2" />
+                      <Icon icon="fas fa-check-circle" className="text-green-600 dark:text-green-400 mr-2" />
                       Tier {dc.tier} Facility
                     </li>
                     <li className="flex items-center">
-                      <i className="fas fa-check-circle text-green-600 dark:text-green-400 mr-2" />
+                      <Icon icon="fas fa-check-circle" className="text-green-600 dark:text-green-400 mr-2" />
                       24/7 Security
                     </li>
                     <li className="flex items-center">
-                      <i className="fas fa-check-circle text-green-600 dark:text-green-400 mr-2" />
+                      <Icon icon="fas fa-check-circle" className="text-green-600 dark:text-green-400 mr-2" />
                       N+1 Redundancy
                     </li>
                     <li className="flex items-center">
-                      <i className="fas fa-check-circle text-green-600 dark:text-green-400 mr-2" />
+                      <Icon icon="fas fa-check-circle" className="text-green-600 dark:text-green-400 mr-2" />
                       {dc.available ? 'Available Now' : 'Coming Soon'}
                     </li>
                   </ul>

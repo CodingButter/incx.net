@@ -1,3 +1,4 @@
+import Icon from '@/components/Icon';
 import Link from 'next/link';
 
 export default function ServicesSection() {
@@ -38,7 +39,7 @@ export default function ServicesSection() {
           {services.map((service, index) => (
             <Link key={index} href={service.link} className="card p-8 text-center hover:scale-105 transition-transform">
               <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i className={`${service.icon} text-white text-3xl`} />
+                <Icon icon={service.icon} className="text-white text-3xl" />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
                 {service.title}
@@ -47,7 +48,7 @@ export default function ServicesSection() {
                 {service.description}
               </p>
               <span className="text-primary-600 dark:text-primary-400 font-semibold">
-                Learn More <i className="fas fa-arrow-right ml-2" />
+                Learn More <Icon icon="fas fa-arrow-right" className="ml-2" />
               </span>
             </Link>
           ))}

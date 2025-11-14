@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Icon from '@/components/Icon';
 import { getGlobalConfig } from '@/lib/config';
 
 const config = getGlobalConfig();
@@ -29,7 +30,7 @@ export default function NetworkStatusPage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="bg-green-50 dark:bg-green-900/20 border-2 border-green-500 rounded-lg p-8 text-center">
             <div className="flex items-center justify-center gap-3 mb-2">
-              <i className="fas fa-check-circle text-4xl text-green-500" />
+              <Icon icon="fas fa-check-circle" className="text-4xl text-green-500" />
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white">All Systems Operational</h2>
             </div>
             <p className="text-gray-600 dark:text-gray-400">
@@ -51,7 +52,7 @@ export default function NetworkStatusPage() {
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
-                      <i className="fas fa-map-marker-alt text-primary-600 dark:text-primary-400 mr-2" />
+                      <Icon icon="fas fa-map-marker-alt" className="text-primary-600 dark:text-primary-400 mr-2" />
                       {datacenter.city}, {datacenter.stateCode}
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400">Tier {datacenter.tier} Facility</p>
@@ -64,21 +65,21 @@ export default function NetworkStatusPage() {
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600 dark:text-gray-400">Network</span>
                     <span className="flex items-center gap-2">
-                      <i className="fas fa-circle text-green-500 text-xs" />
+                      <Icon icon="fas fa-circle" className="text-green-500 text-xs" />
                       <span className="text-sm font-semibold text-gray-900 dark:text-white">Online</span>
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600 dark:text-gray-400">Power</span>
                     <span className="flex items-center gap-2">
-                      <i className="fas fa-circle text-green-500 text-xs" />
+                      <Icon icon="fas fa-circle" className="text-green-500 text-xs" />
                       <span className="text-sm font-semibold text-gray-900 dark:text-white">Online</span>
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600 dark:text-gray-400">Cooling</span>
                     <span className="flex items-center gap-2">
-                      <i className="fas fa-circle text-green-500 text-xs" />
+                      <Icon icon="fas fa-circle" className="text-green-500 text-xs" />
                       <span className="text-sm font-semibold text-gray-900 dark:text-white">Online</span>
                     </span>
                   </div>
@@ -104,84 +105,84 @@ export default function NetworkStatusPage() {
           <div className="space-y-4">
             <div className="card p-6 flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <i className="fas fa-server text-2xl text-primary-600 dark:text-primary-400" />
+                <Icon icon="fas fa-server" className="text-2xl text-primary-600 dark:text-primary-400" />
                 <div>
                   <h3 className="font-bold text-gray-900 dark:text-white">Dedicated Servers</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">Bare metal server provisioning and management</p>
                 </div>
               </div>
               <span className="flex items-center gap-2 text-green-600 dark:text-green-400 font-semibold">
-                <i className="fas fa-check-circle" />
+                <Icon icon="fas fa-check-circle" />
                 Operational
               </span>
             </div>
 
             <div className="card p-6 flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <i className="fas fa-cloud text-2xl text-primary-600 dark:text-primary-400" />
+                <Icon icon="fas fa-cloud" className="text-2xl text-primary-600 dark:text-primary-400" />
                 <div>
                   <h3 className="font-bold text-gray-900 dark:text-white">VPS Hosting</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">Virtual private server provisioning</p>
                 </div>
               </div>
               <span className="flex items-center gap-2 text-green-600 dark:text-green-400 font-semibold">
-                <i className="fas fa-check-circle" />
+                <Icon icon="fas fa-check-circle" />
                 Operational
               </span>
             </div>
 
             <div className="card p-6 flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <i className="fas fa-database text-2xl text-primary-600 dark:text-primary-400" />
+                <Icon icon="fas fa-database" className="text-2xl text-primary-600 dark:text-primary-400" />
                 <div>
                   <h3 className="font-bold text-gray-900 dark:text-white">Colocation Services</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">Rack space and connectivity</p>
                 </div>
               </div>
               <span className="flex items-center gap-2 text-green-600 dark:text-green-400 font-semibold">
-                <i className="fas fa-check-circle" />
+                <Icon icon="fas fa-check-circle" />
                 Operational
               </span>
             </div>
 
             <div className="card p-6 flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <i className="fas fa-network-wired text-2xl text-primary-600 dark:text-primary-400" />
+                <Icon icon="fas fa-network-wired" className="text-2xl text-primary-600 dark:text-primary-400" />
                 <div>
                   <h3 className="font-bold text-gray-900 dark:text-white">Network Connectivity</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">BGP routing and bandwidth</p>
                 </div>
               </div>
               <span className="flex items-center gap-2 text-green-600 dark:text-green-400 font-semibold">
-                <i className="fas fa-check-circle" />
+                <Icon icon="fas fa-check-circle" />
                 Operational
               </span>
             </div>
 
             <div className="card p-6 flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <i className="fas fa-users text-2xl text-primary-600 dark:text-primary-400" />
+                <Icon icon="fas fa-users" className="text-2xl text-primary-600 dark:text-primary-400" />
                 <div>
                   <h3 className="font-bold text-gray-900 dark:text-white">Client Portal</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">Customer management interface</p>
                 </div>
               </div>
               <span className="flex items-center gap-2 text-green-600 dark:text-green-400 font-semibold">
-                <i className="fas fa-check-circle" />
+                <Icon icon="fas fa-check-circle" />
                 Operational
               </span>
             </div>
 
             <div className="card p-6 flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <i className="fas fa-headset text-2xl text-primary-600 dark:text-primary-400" />
+                <Icon icon="fas fa-headset" className="text-2xl text-primary-600 dark:text-primary-400" />
                 <div>
                   <h3 className="font-bold text-gray-900 dark:text-white">Support Systems</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400">Ticket and chat support</p>
                 </div>
               </div>
               <span className="flex items-center gap-2 text-green-600 dark:text-green-400 font-semibold">
-                <i className="fas fa-check-circle" />
+                <Icon icon="fas fa-check-circle" />
                 Operational
               </span>
             </div>
@@ -227,7 +228,7 @@ export default function NetworkStatusPage() {
             Scheduled Maintenance
           </h2>
           <div className="card p-8 text-center">
-            <i className="fas fa-calendar-check text-5xl text-gray-400 dark:text-gray-600 mb-4" />
+            <Icon icon="fas fa-calendar-check" className="text-5xl text-gray-400 dark:text-gray-600 mb-4" />
             <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">No Scheduled Maintenance</h3>
             <p className="text-gray-600 dark:text-gray-400">
               There is currently no scheduled maintenance. We will notify all affected customers via email at least 48 hours in advance of any planned maintenance.
@@ -246,7 +247,7 @@ export default function NetworkStatusPage() {
             Get notified about network status updates and maintenance schedules
           </p>
           <a href="/contact" className="btn btn-primary">
-            <i className="fas fa-bell mr-2" />
+            <Icon icon="fas fa-bell" className="mr-2" />
             Subscribe to Status Updates
           </a>
         </div>

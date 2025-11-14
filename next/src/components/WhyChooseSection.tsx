@@ -1,3 +1,4 @@
+import Icon from '@/components/Icon';
 import { getGlobalConfig } from '@/lib/config';
 
 export default function WhyChooseSection() {
@@ -17,7 +18,7 @@ export default function WhyChooseSection() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="card p-8">
-            <i className="fas fa-clock text-4xl text-primary-600 dark:text-primary-400 mb-4"></i>
+            <Icon icon="fas fa-clock" className="text-4xl text-primary-600 dark:text-primary-400 mb-4" />
             <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">
               15+ Years Experience
             </h3>
@@ -26,7 +27,7 @@ export default function WhyChooseSection() {
             </p>
           </div>
           <div className="card p-8">
-            <i className="fas fa-users text-4xl text-secondary-600 dark:text-secondary-400 mb-4"></i>
+            <Icon icon="fas fa-users" className="text-4xl text-secondary-600 dark:text-secondary-400 mb-4" />
             <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">
               24/7 US Support
             </h3>
@@ -35,7 +36,7 @@ export default function WhyChooseSection() {
             </p>
           </div>
           <div className="card p-8">
-            <i className="fas fa-lock text-4xl text-purple-600 dark:text-purple-400 mb-4"></i>
+            <Icon icon="fas fa-lock" className="text-4xl text-purple-600 dark:text-purple-400 mb-4" />
             <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">
               SOC Audited
             </h3>
@@ -44,7 +45,7 @@ export default function WhyChooseSection() {
             </p>
           </div>
           <div className="card p-8">
-            <i className="fas fa-rocket text-4xl text-orange-600 dark:text-orange-400 mb-4"></i>
+            <Icon icon="fas fa-rocket" className="text-4xl text-orange-600 dark:text-orange-400 mb-4" />
             <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">
               Instant Deployment
             </h3>
@@ -53,7 +54,7 @@ export default function WhyChooseSection() {
             </p>
           </div>
           <div className="card p-8">
-            <i className="fas fa-dollar-sign text-4xl text-green-600 dark:text-green-400 mb-4"></i>
+            <Icon icon="fas fa-dollar-sign" className="text-4xl text-green-600 dark:text-green-400 mb-4" />
             <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">
               No Hidden Fees
             </h3>
@@ -62,7 +63,7 @@ export default function WhyChooseSection() {
             </p>
           </div>
           <div className="card p-8">
-            <i className="fas fa-check-circle text-4xl text-blue-600 dark:text-blue-400 mb-4"></i>
+            <Icon icon="fas fa-check-circle" className="text-4xl text-blue-600 dark:text-blue-400 mb-4" />
             <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">
               Flexible Terms
             </h3>

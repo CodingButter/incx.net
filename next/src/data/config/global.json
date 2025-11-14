@@ -99,7 +99,7 @@
   "branding": {
     "primaryColor": "#3B82F6",
     "secondaryColor": "#10B981",
-    "logo": "/images/incx_logo.svg",
+    "logo": "/images/logo.svg",
     "favicon": "/images/favicon.png"
   }
 }

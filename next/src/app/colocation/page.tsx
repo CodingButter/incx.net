@@ -19,7 +19,7 @@ export default async function ColocationPage() {
 
   return (
     <>
-      <Hero config={config.hero} backgroundImage="/images/colocation-hero.jpg" />
+      <Hero config={config.hero} backgroundImage="/images/colocation-hero.webp" />
 
       <section id="products" className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4">

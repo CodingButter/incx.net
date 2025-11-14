@@ -1,3 +1,4 @@
+import Icon from '@/components/Icon';
 import Link from 'next/link';
 
 export default function DedicatedServersSection() {
@@ -25,27 +26,27 @@ export default function DedicatedServersSection() {
             </div>
             <div className="space-y-4 mb-8">
               <div className="flex items-center gap-3">
-                <i className="fas fa-microchip text-primary-500 w-5"></i>
+                <Icon icon="fas fa-microchip" className="text-primary-500 w-5" />
                 <span className="text-gray-700 dark:text-gray-300">Intel Xeon E3-1270v3</span>
               </div>
               <div className="flex items-center gap-3">
-                <i className="fas fa-memory text-primary-500 w-5"></i>
+                <Icon icon="fas fa-memory" className="text-primary-500 w-5" />
                 <span className="text-gray-700 dark:text-gray-300">32GB DDR3 RAM</span>
               </div>
               <div className="flex items-center gap-3">
-                <i className="fas fa-hdd text-primary-500 w-5"></i>
+                <Icon icon="fas fa-hdd" className="text-primary-500 w-5" />
                 <span className="text-gray-700 dark:text-gray-300">2x1TB SATA HDD</span>
               </div>
               <div className="flex items-center gap-3">
-                <i className="fas fa-network-wired text-primary-500 w-5"></i>
+                <Icon icon="fas fa-network-wired" className="text-primary-500 w-5" />
                 <span className="text-gray-700 dark:text-gray-300">1Gbps Unmetered</span>
               </div>
               <div className="flex items-center gap-3">
-                <i className="fas fa-exchange-alt text-primary-500 w-5"></i>
+                <Icon icon="fas fa-exchange-alt" className="text-primary-500 w-5" />
                 <span className="text-gray-700 dark:text-gray-300">33TB Transfer</span>
               </div>
               <div className="flex items-center gap-3">
-                <i className="fas fa-map-marker-alt text-primary-500 w-5"></i>
+                <Icon icon="fas fa-map-marker-alt" className="text-primary-500 w-5" />
                 <span className="text-gray-700 dark:text-gray-300">Detroit / Kansas City</span>
               </div>
             </div>
@@ -70,27 +71,27 @@ export default function DedicatedServersSection() {
             </div>
             <div className="space-y-4 mb-8">
               <div className="flex items-center gap-3">
-                <i className="fas fa-microchip text-primary-500 w-5"></i>
+                <Icon icon="fas fa-microchip" className="text-primary-500 w-5" />
                 <span className="text-gray-700 dark:text-gray-300">Intel Xeon E5-2680v4</span>
               </div>
               <div className="flex items-center gap-3">
-                <i className="fas fa-memory text-primary-500 w-5"></i>
+                <Icon icon="fas fa-memory" className="text-primary-500 w-5" />
                 <span className="text-gray-700 dark:text-gray-300">64GB DDR4 RAM</span>
               </div>
               <div className="flex items-center gap-3">
-                <i className="fas fa-hdd text-primary-500 w-5"></i>
+                <Icon icon="fas fa-hdd" className="text-primary-500 w-5" />
                 <span className="text-gray-700 dark:text-gray-300">2x2TB SSD</span>
               </div>
               <div className="flex items-center gap-3">
-                <i className="fas fa-network-wired text-primary-500 w-5"></i>
+                <Icon icon="fas fa-network-wired" className="text-primary-500 w-5" />
                 <span className="text-gray-700 dark:text-gray-300">1Gbps Unmetered</span>
               </div>
               <div className="flex items-center gap-3">
-                <i className="fas fa-exchange-alt text-primary-500 w-5"></i>
+                <Icon icon="fas fa-exchange-alt" className="text-primary-500 w-5" />
                 <span className="text-gray-700 dark:text-gray-300">33TB Transfer</span>
               </div>
               <div className="flex items-center gap-3">
-                <i className="fas fa-map-marker-alt text-primary-500 w-5"></i>
+                <Icon icon="fas fa-map-marker-alt" className="text-primary-500 w-5" />
                 <span className="text-gray-700 dark:text-gray-300">All Locations</span>
               </div>
             </div>
@@ -110,27 +111,27 @@ export default function DedicatedServersSection() {
             </div>
             <div className="space-y-4 mb-8">
               <div className="flex items-center gap-3">
-                <i className="fas fa-microchip text-primary-500 w-5"></i>
+                <Icon icon="fas fa-microchip" className="text-primary-500 w-5" />
                 <span className="text-gray-700 dark:text-gray-300">Dual Xeon Gold 6140</span>
               </div>
               <div className="flex items-center gap-3">
-                <i className="fas fa-memory text-primary-500 w-5"></i>
+                <Icon icon="fas fa-memory" className="text-primary-500 w-5" />
                 <span className="text-gray-700 dark:text-gray-300">128GB DDR4 RAM</span>
               </div>
               <div className="flex items-center gap-3">
-                <i className="fas fa-hdd text-primary-500 w-5"></i>
+                <Icon icon="fas fa-hdd" className="text-primary-500 w-5" />
                 <span className="text-gray-700 dark:text-gray-300">4x4TB NVMe SSD</span>
               </div>
               <div className="flex items-center gap-3">
-                <i className="fas fa-network-wired text-primary-500 w-5"></i>
+                <Icon icon="fas fa-network-wired" className="text-primary-500 w-5" />
                 <span className="text-gray-700 dark:text-gray-300">10Gbps Network</span>
               </div>
               <div className="flex items-center gap-3">
-                <i className="fas fa-exchange-alt text-primary-500 w-5"></i>
+                <Icon icon="fas fa-exchange-alt" className="text-primary-500 w-5" />
                 <span className="text-gray-700 dark:text-gray-300">Unlimited Transfer</span>
               </div>
               <div className="flex items-center gap-3">
-                <i className="fas fa-map-marker-alt text-primary-500 w-5"></i>
+                <Icon icon="fas fa-map-marker-alt" className="text-primary-500 w-5" />
                 <span className="text-gray-700 dark:text-gray-300">All Locations</span>
               </div>
             </div>

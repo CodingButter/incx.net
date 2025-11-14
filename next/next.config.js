@@ -13,6 +13,14 @@ const nextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   swcMinify: true,
+  // Performance optimizations
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  experimental: {
+    optimizeCss: true, // Enable CSS optimization
+    optimizePackageImports: ['react-icons', '@heroicons/react'], // Optimize package imports
+  },
 }
 
 module.exports = nextConfig

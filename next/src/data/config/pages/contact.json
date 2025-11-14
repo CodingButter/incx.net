@@ -7,7 +7,7 @@
   "hero": {
     "title": "Contact Our Team",
     "subtitle": "Get in touch with our expert support team. Available {{support.availability}} to help with all your hosting needs.",
-    "image": "/images/contact.jpg"
+    "image": "/images/contact-hero.webp"
   },
   "departments": [
     {

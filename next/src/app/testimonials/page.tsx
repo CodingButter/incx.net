@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Icon from '@/components/Icon';
 import Hero from '@/components/Hero';
 import { loadPageConfig } from '@/lib/config';
 import testimonialsData from '@config/testimonials.json';
@@ -36,7 +37,7 @@ export default async function TestimonialsPage() {
 
   return (
     <>
-      <Hero config={config.hero} backgroundImage="/images/testimonials.jpg" />
+      <Hero config={config.hero} backgroundImage="/images/testimonials-hero.webp" />
 
       {/* Stats Section */}
       {stats && (
@@ -95,7 +96,7 @@ export default async function TestimonialsPage() {
                           {testimonial.name}
                         </h3>
                         {testimonial.verified && (
-                          <i className="fas fa-check-circle text-green-600 dark:text-green-400 text-sm" />
+                          <Icon icon="fas fa-check-circle" className="text-green-600 dark:text-green-400 text-sm" />
                         )}
                       </div>
                       <p className="text-gray-600 dark:text-gray-400 text-sm">

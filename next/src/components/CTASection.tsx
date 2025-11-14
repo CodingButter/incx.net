@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Icon from '@/components/Icon';
 import { getGlobalConfig } from '@/lib/config';
 
 export default function CTASection() {
@@ -25,7 +26,7 @@ export default function CTASection() {
             href={`tel:${telPhone}`}
             className="btn border-2 border-white text-white hover:bg-white hover:text-primary-600 px-8 py-4 text-lg"
           >
-            <i className="fas fa-phone mr-2"></i> {config.contact.phoneDisplay}
+            <Icon icon="fas fa-phone" className="mr-2" /> {config.contact.phoneDisplay}
           </a>
         </div>
       </div>

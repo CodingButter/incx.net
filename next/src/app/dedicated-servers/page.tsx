@@ -19,7 +19,7 @@ export default async function DedicatedServersPage() {
 
   return (
     <>
-      <Hero config={config.hero} backgroundImage="/images/dedicated-servers-hero.jpg" />
+      <Hero config={config.hero} backgroundImage="/images/dedicated-servers-hero.webp" />
 
       <section id="products" className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4">

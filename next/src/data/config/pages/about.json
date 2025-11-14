@@ -7,7 +7,7 @@
   "hero": {
     "title": "About Interconnecx",
     "subtitle": "Your trusted hosting partner since {{company.founded}}. Delivering enterprise-grade infrastructure solutions with unmatched reliability and support.",
-    "image": "/images/about.jpg"
+    "image": "/images/about-hero.webp"
   },
   "story": {
     "title": "Our Story",

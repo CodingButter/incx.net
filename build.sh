@@ -184,8 +184,9 @@ check_nodejs() {
 
 # Configure WEB_ROOT directory
 configure_webroot() {
-    # Only prompt if WEB_ROOT is not set and we're in interactive mode
-    if [ -z "$WEB_ROOT" ] && [ -t 0 ]; then
+    # Only prompt if WEB_ROOT is not set and we can access the terminal
+    # Check if we have a controlling terminal (works even when piped from curl)
+    if [ -z "$WEB_ROOT" ] && [ -t 1 ] && [ -c /dev/tty ]; then
         print_header "Build Directory Configuration"
 
         print_info "The default build directory is 'www'"
@@ -193,12 +194,12 @@ configure_webroot() {
         print_info "Common examples: html, public_html, htdocs, /var/www/html"
         echo ""
 
-        read -p "Would you like to use a custom build directory? (y/n): " -n 1 -r
+        read -p "Would you like to use a custom build directory? (y/n): " -n 1 -r </dev/tty
         echo ""
         echo ""
 
         if [[ $REPLY =~ ^[Yy]$ ]]; then
-            read -p "Enter the build directory name (e.g., html, public_html): " CUSTOM_DIR
+            read -p "Enter the build directory name (e.g., html, public_html): " CUSTOM_DIR </dev/tty
 
             # Trim whitespace
             CUSTOM_DIR=$(echo "$CUSTOM_DIR" | xargs)
@@ -209,7 +210,7 @@ configure_webroot() {
                 echo ""
 
                 # Ask if they want to save it permanently
-                read -p "Would you like to save this setting for future builds? (y/n): " -n 1 -r
+                read -p "Would you like to save this setting for future builds? (y/n): " -n 1 -r </dev/tty
                 echo ""
 
                 if [[ $REPLY =~ ^[Yy]$ ]]; then

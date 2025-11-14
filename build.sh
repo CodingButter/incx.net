@@ -3,6 +3,7 @@
 #############################################
 # Build Script for Next.js Static Site
 # Usage: ./build.sh
+# Or: curl -fsSL https://raw.githubusercontent.com/CodingButter/incx.net/main/build.sh | bash
 #############################################
 
 set -e  # Exit on error
@@ -13,6 +14,10 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
+
+# Repository URL
+REPO_URL="https://github.com/CodingButter/incx.net.git"
+CLONE_DIR="incx-template"
 
 # Print colored message
 print_message() {
@@ -244,6 +249,73 @@ verify_build() {
     fi
 }
 
+# Check if we're in the repository, if not clone it
+check_repository() {
+    # Check if we're already in the repository (has config/ and next/ directories)
+    if [ -d "config" ] && [ -d "next" ] && [ -f "build.sh" ]; then
+        # We're in the repo, continue normally
+        return 0
+    fi
+
+    # Not in repo - need to clone it
+    print_header "Setting Up Template"
+    print_info "Not in repository directory. Cloning template..."
+
+    # Check if git is installed
+    if ! command_exists git; then
+        print_error "git is not installed. Installing git..."
+
+        local os_type=$(detect_os)
+        local SUDO=""
+        if [ "$EUID" -ne 0 ]; then
+            SUDO="sudo"
+        fi
+
+        case $os_type in
+            debian)
+                $SUDO apt-get update && $SUDO apt-get install -y git
+                ;;
+            redhat)
+                $SUDO yum install -y git
+                ;;
+            mac)
+                if command_exists brew; then
+                    brew install git
+                else
+                    print_error "Please install git manually from: https://git-scm.com"
+                    exit 1
+                fi
+                ;;
+            *)
+                print_error "Please install git manually from: https://git-scm.com"
+                exit 1
+                ;;
+        esac
+    fi
+
+    # Clone the repository
+    if [ -d "$CLONE_DIR" ]; then
+        print_warning "Directory '$CLONE_DIR' already exists. Removing..."
+        rm -rf "$CLONE_DIR"
+    fi
+
+    print_info "Cloning repository to $CLONE_DIR..."
+    git clone "$REPO_URL" "$CLONE_DIR"
+
+    if [ ! -d "$CLONE_DIR" ]; then
+        print_error "Failed to clone repository"
+        exit 1
+    fi
+
+    print_success "Repository cloned successfully!"
+    print_info "Entering $CLONE_DIR and running build..."
+    echo ""
+
+    # Change to cloned directory and run build script
+    cd "$CLONE_DIR"
+    exec bash build.sh
+}
+
 # Main execution
 main() {
     # Clear screen only if running in an interactive terminal
@@ -254,6 +326,9 @@ main() {
     print_header "Website Build Script"
     print_info "This script will build your website from the config files"
     echo ""
+
+    # Check if we're in the repo, if not clone it
+    check_repository
 
     # Change to script directory
     cd "$(dirname "$0")"
@@ -275,10 +350,7 @@ main() {
     print_header "Build Complete!"
     print_success "Your website is ready!"
     print_info "The static files are in: $(pwd)/$OUTPUT_DIR"
-    print_info "You can deploy these files to any web server."
-    echo ""
-    print_info "To test locally, run: cd next && node serve-dist.js"
-    print_info "Then visit: http://localhost:8080"
+    print_info "You can now deploy these files to your web server."
     echo ""
 }
 

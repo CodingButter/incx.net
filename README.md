@@ -6,6 +6,29 @@ Built with Next.js for maximum performance, SEO optimization, and lightning-fast
 
 ---
 
+## ⚡ One-Command Setup
+
+Get started instantly with a single command:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/CodingButter/incx.net/main/build.sh | bash
+```
+
+Or with wget:
+
+```bash
+wget -qO- https://raw.githubusercontent.com/CodingButter/incx.net/main/build.sh | bash
+```
+
+**This will:**
+1. Clone the template to `incx-template/` folder
+2. Install Node.js and dependencies automatically
+3. Build your website to `incx-template/www/`
+
+Then just customize the config files and rebuild!
+
+---
+
 ## 🚀 Quick Start (3 Steps)
 
 ### Step 1: Edit Your Configuration

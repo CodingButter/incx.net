@@ -408,6 +408,7 @@ Each page has its own configuration file where you can customize content.
   "hero": {
     "title": "Enterprise Infrastructure Solutions",
     "subtitle": "Premium hosting with {{network.uptime}} uptime guarantee",
+    "image": "/images/network-hero.webp",
     "cta": {
       "text": "View Plans",
       "link": "/vps"
@@ -436,6 +437,23 @@ Each page has its own configuration file where you can customize content.
   }
 }
 ```
+
+#### Hero Section Fields
+
+The hero section supports the following fields:
+
+- `title` - Main headline text (required)
+- `subtitle` - Subheading text with template variable support (optional)
+- `image` - Path to hero background image (optional, e.g., `/images/hero.webp`)
+- `cta` - Call-to-action button (optional)
+  - `text` - Button text
+  - `link` - Button URL
+
+**Image Requirements:**
+- Images must be in `next/public/images/` folder
+- Use WebP format for best performance
+- Recommended size: 1920x1080px
+- Path must start with `/images/`
 
 ### Datacenter Configuration
 

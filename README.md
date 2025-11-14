@@ -134,6 +134,15 @@ The script will use `sudo` internally when needed (you'll be prompted for your p
 
 All content is managed through JSON files in the `config/` folder. No coding required!
 
+### Quick Configuration Workflow
+
+After making any changes to configuration files:
+
+1. **Edit your JSON files** in the `config/` folder
+2. **Run the build script**: `./build.sh`
+3. **Test locally**: `cd next && node serve-dist.js`
+4. **Deploy** the `www/` folder to your web server
+
 ### Main Configuration: `config/global.json`
 
 This file contains your company information and settings that are reused throughout the site.
@@ -204,6 +213,11 @@ This file contains your company information and settings that are reused through
 
 Define your VPS plans, dedicated servers, and colocation offerings.
 
+Products are organized by categories:
+- `dedicated-servers` - Dedicated server offerings
+- `vps` - Virtual Private Server plans
+- `colocation` - Colocation services
+
 **Example VPS Plan:**
 ```json
 {
@@ -226,7 +240,7 @@ Define your VPS plans, dedicated servers, and colocation offerings.
 }
 ```
 
-**Example Dedicated Server:**
+**Example Dedicated Server with Badge:**
 ```json
 {
   "id": "server-e3",
@@ -234,6 +248,8 @@ Define your VPS plans, dedicated servers, and colocation offerings.
   "price": 99.99,
   "billingCycle": "month",
   "featured": true,
+  "badge": "Most Popular",
+  "badgeColor": "primary",
   "specs": {
     "cpu": "Intel Xeon E3-1270v6",
     "ram": "32GB DDR4 ECC",
@@ -249,10 +265,62 @@ Define your VPS plans, dedicated servers, and colocation offerings.
 }
 ```
 
+#### Product Badge Colors
+
+Add visual badges to highlight special products:
+
+**Available Badge Colors:**
+- `primary` - Blue badge (for popular/recommended items)
+- `secondary` - Gray badge (for standard items)
+- `success` - Green badge (for best value/deals)
+- `warning` - Yellow badge (for limited time offers)
+- `danger` - Red badge (for urgent/hot deals)
+
+**Example with Badges:**
+```json
+{
+  "products": [
+    {
+      "id": "vps-promo",
+      "name": "VPS Special",
+      "price": 4.99,
+      "badge": "Limited Offer",
+      "badgeColor": "warning",
+      "featured": true
+    },
+    {
+      "id": "server-popular",
+      "name": "E3-1270",
+      "price": 99,
+      "badge": "Most Popular",
+      "badgeColor": "primary",
+      "featured": true
+    },
+    {
+      "id": "server-value",
+      "name": "E5-2650",
+      "price": 149,
+      "badge": "Best Value",
+      "badgeColor": "success",
+      "featured": true
+    }
+  ]
+}
+```
+
+#### Product Management Tips
+
+1. **Set `featured: true`** to display products on the home page
+2. **Use unique IDs** for each product (e.g., `vps-starter`, `server-e3-1270`)
+3. **Add badges** to highlight special offerings
+4. **Keep pricing current** by updating the `price` field
+5. **Update specs** as hardware changes
+
 ### Testimonials: `config/testimonials.json`
 
-Add customer reviews and ratings.
+Add customer reviews and ratings to build trust with potential customers.
 
+**Example Testimonial:**
 ```json
 {
   "id": "review-1",
@@ -261,7 +329,59 @@ Add customer reviews and ratings.
   "rating": 5,
   "date": "2024-01-15",
   "text": "Excellent service and support. Our servers have been rock solid!",
-  "featured": true
+  "service": "Dedicated Servers",
+  "featured": true,
+  "verified": true
+}
+```
+
+#### Testimonial Fields
+
+- `id` - Unique identifier (required)
+- `author` - Customer name (required)
+- `company` - Customer's company/organization (optional)
+- `rating` - Star rating 1-5 (required)
+- `date` - Review date in YYYY-MM-DD format (required)
+- `text` - Review content (required)
+- `service` - Which service they used (should match product category)
+- `featured` - Set to `true` to show on home page (max 3 recommended)
+- `verified` - Set to `true` to add a verified badge
+
+#### Managing Testimonials
+
+1. **Featured testimonials** (`featured: true`) appear on the home page
+2. **Limit to 3 featured** testimonials for best display
+3. **Verified badge** (`verified: true`) adds credibility
+4. **Match service names** to your product categories for filtering
+5. **Keep dates current** to show active customer base
+
+**Example with Multiple Testimonials:**
+```json
+{
+  "testimonials": [
+    {
+      "id": "review-1",
+      "author": "Sarah Johnson",
+      "company": "E-Commerce Solutions LLC",
+      "rating": 5,
+      "date": "2025-01-10",
+      "service": "VPS",
+      "text": "Fast, reliable VPS hosting. Great value for the price!",
+      "featured": true,
+      "verified": true
+    },
+    {
+      "id": "review-2",
+      "author": "Mike Chen",
+      "company": "DataFlow Inc",
+      "rating": 5,
+      "date": "2024-12-15",
+      "service": "Dedicated Servers",
+      "text": "Outstanding performance and support. Highly recommended!",
+      "featured": true,
+      "verified": true
+    }
+  ]
 }
 ```
 
@@ -285,9 +405,141 @@ Each page has its own configuration file where you can customize content.
       "title": "Why Choose Us?",
       "content": "We've been providing reliable hosting since {{company.founded}}..."
     }
+  ],
+  "stats": {
+    "enabled": true,
+    "items": [
+      {
+        "label": "Customers",
+        "value": "2,500+",
+        "icon": "fas fa-users"
+      },
+      {
+        "label": "Uptime",
+        "value": "99.99%",
+        "icon": "fas fa-chart-line"
+      }
+    ]
+  }
+}
+```
+
+### Datacenter Configuration
+
+Datacenters are configured in `config/global.json` under the `datacenters` array. They automatically appear on your homepage and network page.
+
+**Example Datacenter Configuration:**
+```json
+{
+  "datacenters": [
+    {
+      "id": "dtw",
+      "city": "Detroit",
+      "state": "Michigan",
+      "stateCode": "MI",
+      "tier": 3,
+      "available": true
+    },
+    {
+      "id": "chi",
+      "city": "Chicago",
+      "state": "Illinois",
+      "stateCode": "IL",
+      "tier": 3,
+      "available": true
+    }
   ]
 }
 ```
+
+**Datacenter Fields:**
+- `id` - Unique identifier (e.g., airport code or city abbreviation)
+- `city` - City name
+- `state` - Full state name
+- `stateCode` - Two-letter state code
+- `tier` - Datacenter tier level (1, 2, 3, or 4)
+- `available` - Set to `true` to show, `false` to hide
+
+**Dynamic Variable:**
+- Use `{{datacenters.count}}` or `{{datacenters.length}}` to show the number of datacenters
+
+### External Links Configuration
+
+Configure external services in `config/global.json`:
+
+```json
+{
+  "externalLinks": {
+    "knowledgeBase": "https://support.yourcompany.com",
+    "clientPortal": "https://portal.yourcompany.com"
+  }
+}
+```
+
+These links are used throughout the site:
+- `/knowledge-base` page redirects to your knowledge base URL
+- `/client-portal` page redirects to your client portal URL
+- Navigation menus automatically use these URLs
+
+### JSON Validation Best Practices
+
+**Always validate your JSON before building!**
+
+Common JSON mistakes to avoid:
+
+1. **Missing Commas:**
+   ```json
+   // ❌ Wrong
+   {
+     "name": "value"
+     "other": "value"
+   }
+
+   // ✅ Correct
+   {
+     "name": "value",
+     "other": "value"
+   }
+   ```
+
+2. **Trailing Commas (not allowed in JSON):**
+   ```json
+   // ❌ Wrong
+   {
+     "items": [
+       "item1",
+       "item2",
+     ]
+   }
+
+   // ✅ Correct
+   {
+     "items": [
+       "item1",
+       "item2"
+     ]
+   }
+   ```
+
+3. **Single Quotes (must use double quotes):**
+   ```json
+   // ❌ Wrong
+   {
+     'name': 'value'
+   }
+
+   // ✅ Correct
+   {
+     "name": "value"
+   }
+   ```
+
+**Validation Tools:**
+- **Online:** https://jsonlint.com/
+- **VS Code:** Install "JSON Tools" extension
+- **Command Line:** `cat config/global.json | jq` (if jq is installed)
+
+**Tip:** Most modern code editors (VS Code, Sublime Text, etc.) will highlight JSON errors automatically!
 
 ### Google Analytics Configuration
 
@@ -350,6 +602,196 @@ Enable Google Analytics tracking by editing the `analytics` section in `config/g
    - Copy the Container ID (starts with "GTM-")
 
 **Privacy Note:** Remember to update your Privacy Policy (`config/privacy-policy.md`) when enabling analytics to comply with GDPR, CCPA, and other privacy regulations.
+
+---
+
+## 🎨 Using Font Awesome Icons
+
+Your website supports Font Awesome icons throughout the configuration files. Icons can be used in stats, features, navigation, and more!
+
+### Where to Find Icons
+
+Visit **[Font Awesome Icon Library](https://fontawesome.com/search?o=r&m=free)** to browse thousands of free icons.
+
+**Direct link:** https://fontawesome.com/search?o=r&m=free
+
+### How to Use Icons
+
+1. **Browse the Font Awesome website** for an icon you like
+2. **Click on the icon** to see its details
+3. **Copy the class name** (e.g., `fa-solid fa-server`, `fa-regular fa-users`, `fa-brands fa-facebook`)
+4. **Use in your configuration** by pasting the class name
+
+### Icon Class Format
+
+Font Awesome icons use a two-part class format:
+
+```
+[style] [icon-name]
+```
+
+**Available Styles:**
+- `fa-solid` or `fas` - Solid icons (most common)
+- `fa-regular` or `far` - Regular/outlined icons
+- `fa-brands` or `fab` - Brand logos (Facebook, Twitter, etc.)
+
+**Examples:**
+- `fa-solid fa-server` or `fas fa-server` - Server icon (solid)
+- `fa-solid fa-users` or `fas fa-users` - Users icon (solid)
+- `fa-brands fa-facebook` or `fab fa-facebook` - Facebook logo
+- `fa-regular fa-circle-check` or `far fa-circle-check` - Check circle (outlined)
+
+### Using Icons in Configuration
+
+#### Stats Section (Page Configs)
+
+Add icons to statistics displays in your page configuration files:
+
+```json
+{
+  "stats": {
+    "enabled": true,
+    "items": [
+      {
+        "label": "Active Customers",
+        "value": "2,500+",
+        "icon": "fas fa-users"
+      },
+      {
+        "label": "Uptime",
+        "value": "99.99%",
+        "icon": "fas fa-chart-line"
+      },
+      {
+        "label": "Servers Deployed",
+        "value": "10,000+",
+        "icon": "fas fa-server"
+      },
+      {
+        "label": "Support Response",
+        "value": "< 15 min",
+        "icon": "fas fa-headset"
+      }
+    ]
+  }
+}
+```
+
+#### Social Media Links (global.json)
+
+Social media icons are automatically used based on the platform:
+
+```json
+{
+  "social": {
+    "facebook": "https://facebook.com/yourcompany",
+    "twitter": "https://twitter.com/yourcompany",
+    "linkedin": "https://linkedin.com/company/yourcompany",
+    "instagram": "https://instagram.com/yourcompany"
+  }
+}
+```
+
+The website automatically uses:
+- Facebook → `fab fa-facebook`
+- Twitter → `fab fa-twitter`
+- LinkedIn → `fab fa-linkedin`
+- Instagram → `fab fa-instagram`
+- YouTube → `fab fa-youtube`
+
+#### Features with Icons
+
+Add icons to feature lists for visual appeal:
+
+```json
+{
+  "features": [
+    {
+      "title": "24/7 Support",
+      "icon": "fas fa-headset",
+      "description": "Round-the-clock technical assistance"
+    },
+    {
+      "title": "DDoS Protection",
+      "icon": "fas fa-shield-halved",
+      "description": "Enterprise-grade security"
+    },
+    {
+      "title": "Fast Deployment",
+      "icon": "fas fa-rocket",
+      "description": "Instant server provisioning"
+    }
+  ]
+}
+```
+
+### Popular Icons for Hosting Websites
+
+Here are commonly used icons for hosting and infrastructure websites:
+
+**Infrastructure & Servers:**
+- `fas fa-server` - Server
+- `fas fa-database` - Database
+- `fas fa-cloud` - Cloud
+- `fas fa-network-wired` - Network
+- `fas fa-hdd` - Hard drive/Storage
+
+**Performance & Monitoring:**
+- `fas fa-gauge-high` - Performance/Speed
+- `fas fa-chart-line` - Growth/Statistics
+- `fas fa-bolt` - Lightning/Fast
+- `fas fa-rocket` - Fast deployment
+- `fas fa-diagram-project` - Infrastructure
+
+**Security & Protection:**
+- `fas fa-shield-halved` - Security/Shield
+- `fas fa-lock` - Secure/Locked
+- `fas fa-user-shield` - Protected users
+- `fas fa-key` - Access/Security
+
+**Support & Service:**
+- `fas fa-headset` - Support/Help
+- `fas fa-users` - Customers/Team
+- `fas fa-phone` - Phone support
+- `fas fa-envelope` - Email contact
+- `fas fa-comments` - Communication
+
+**Business & Success:**
+- `fas fa-trophy` - Achievement
+- `fas fa-star` - Rating/Quality
+- `fas fa-circle-check` - Verified/Approved
+- `fas fa-award` - Certification
+- `fas fa-thumbs-up` - Satisfaction
+
+**Location & Datacenter:**
+- `fas fa-building` - Building/Datacenter
+- `fas fa-map-marker-alt` - Location
+- `fas fa-globe` - Global/World
+- `fas fa-map-pin` - Location pin
+
+### Tips for Choosing Icons
+
+1. **Keep it consistent** - Use icons from the same style (all solid or all regular)
+2. **Make them relevant** - Choose icons that clearly represent the feature
+3. **Don't overuse** - Too many icons can be distracting
+4. **Test the look** - Build and preview to ensure icons look good
+5. **Use brand icons** for social media only (Facebook, Twitter, etc.)
+
+### Icon Troubleshooting
+
+**Problem:** Icon not showing (shows empty box or nothing)
+
+**Solution:**
+1. Check the icon name is spelled correctly
+2. Verify the icon exists on Font Awesome (free tier only)
+3. Make sure you're using the correct style prefix (`fas`, `far`, `fab`)
+4. Rebuild the website: `./build.sh`
+
+**Problem:** Wrong icon appears
+
+**Solution:**
+- Double-check the icon class name on the Font Awesome website
+- Some icons have similar names but different meanings
 
 ---
 
@@ -785,9 +1227,11 @@ cd ..
 
 **Solution:**
 1. Make sure you edited files in the `config/` folder (not in `next/src/`)
-2. Run `./build.sh` to rebuild
+2. Run `./build.sh` to rebuild completely
 3. Clear browser cache (Ctrl+Shift+R or Cmd+Shift+R)
 4. If testing locally, restart the serve-dist.js server
+5. Check browser console (F12) for any JavaScript errors
+6. Verify JSON files are valid using https://jsonlint.com/
 
 ---
 
@@ -822,6 +1266,29 @@ cd ..
      "other": "value"
    }
    ```
+
+---
+
+**Problem:** Products not showing on home page
+
+**Solution:**
+1. Set `"featured": true` in the product configuration
+2. Verify the product is in the correct category in `products.json`
+3. Check that `products.json` is valid JSON
+4. Rebuild: `./build.sh`
+5. Clear browser cache
+
+---
+
+**Problem:** Testimonials not appearing
+
+**Solution:**
+1. Set `"featured": true` for testimonials to show on homepage
+2. Limit to 3 featured testimonials for best display
+3. Verify `rating` is between 1-5
+4. Check `testimonials.json` is valid JSON
+5. Ensure `service` field matches your product categories
+6. Rebuild and clear cache
 
 ---
 
@@ -945,6 +1412,79 @@ incx.net/
 - Upload this folder to your web server
 
 ---
+
+## ⚠️ Important Notes
+
+### File Editing Guidelines
+
+1. **ONLY edit files in the `config/` folder**
+   - Never modify files in `next/src/` directly
+   - All content changes should be made in JSON or Markdown files
+
+2. **Always validate JSON before building**
+   - Use https://jsonlint.com/ to check for errors
+   - Most code editors highlight JSON errors automatically
+
+3. **Use template variables for repeated content**
+   - Company name, phone, email should use variables
+   - Update once in `global.json`, reflects everywhere
+
+4. **Image paths must start with `/images/`**
+   - Correct: `/images/logo.svg`
+   - Wrong: `images/logo.svg` or `./images/logo.svg`
+
+5. **Keep unique IDs for all items**
+   - Product IDs: `vps-starter`, `server-e3-1270`
+   - Testimonial IDs: `review-001`, `review-002`
+   - Datacenter IDs: `dtw`, `chi`, `nyc`
+
+### Build & Deploy Workflow
+
+1. **Make changes** to files in `config/` folder
+2. **Validate JSON** using jsonlint.com or your editor
+3. **Run build**: `./build.sh`
+4. **Test locally**: `cd next && node serve-dist.js`
+5. **Review changes** in browser at http://localhost:8080
+6. **Deploy** the `www/` folder to your web server
+
+### Configuration Best Practices
+
+1. **Backup before major changes**
+   - Keep copies of working configuration files
+   - Use git for version control
+
+2. **Test incrementally**
+   - Make small changes and test
+   - Don't change multiple things at once
+
+3. **Clear browser cache after builds**
+   - Use Ctrl+Shift+R (Windows/Linux)
+   - Use Cmd+Shift+R (Mac)
+
+4. **Keep documentation updated**
+   - Document custom changes you make
+   - Note any special configuration
+
+5. **Use consistent naming**
+   - Follow existing naming patterns
+   - Use lowercase with hyphens for IDs
+
+### SEO & Performance Tips
+
+1. **Always fill out meta tags** in page configs
+   - Title, description, keywords for each page
+
+2. **Optimize images before uploading**
+   - Use WebP format when possible
+   - Compress images to reduce file size
+
+3. **Keep content fresh**
+   - Update dates in legal documents
+   - Add new testimonials regularly
+   - Update product offerings
+
+4. **Use descriptive alt text** for images
+   - Helps with accessibility and SEO
 
 ## 💡 Common Workflows
 
